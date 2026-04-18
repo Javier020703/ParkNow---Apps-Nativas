@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ParkNow1">
         <activity
+            android:name=".ui.user.PruebaActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
