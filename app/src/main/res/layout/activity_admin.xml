@@ -14,14 +14,28 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            android:background="#0D3C5E"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="56dp"
+            android:background="#0D3C5E"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:paddingTop="8dp"
+            android:elevation="4dp"/>
 
+        <!-- CONTENIDO -->
         <FrameLayout
             android:id="@+id/frameContainer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <!-- BOTONES ABAJO -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            app:menu="@menu/bottom_menu"/>
+
     </LinearLayout>
 
     <!-- MENÚ -->

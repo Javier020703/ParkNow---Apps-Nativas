@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_dashboard"
+        android:title="Inicio"
+        android:icon="@android:drawable/ic_menu_view"/>
+
+    <item
+        android:id="@+id/bottom_parqueaderos"
+        android:title="Parking"
+        android:icon="@android:drawable/ic_menu_compass"/>
+
+    <item
+        android:id="@+id/bottom_usuarios"
+        android:title="Usuarios"
+        android:icon="@android:drawable/ic_menu_myplaces"/>
+
+</menu>

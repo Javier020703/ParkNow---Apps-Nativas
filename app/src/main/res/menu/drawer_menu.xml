@@ -1,14 +1,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/nav_dashboard" android:title="Dashboard"/>
-    <item android:id="@+id/nav_parqueaderos" android:title="Parqueaderos"/>
-    <item android:id="@+id/nav_agregar" android:title="Agregar Parqueadero"/>
-    <item android:id="@+id/nav_reservas" android:title="Reservas"/>
-    <item android:id="@+id/nav_detalle" android:title="Detalle Reserva"/>
-    <item android:id="@+id/nav_usuarios" android:title="Usuarios"/>
-    <item android:id="@+id/nav_tarifas" android:title="Tarifas"/>
-    <item android:id="@+id/nav_estado" android:title="Estado Tiempo Real"/>
-    <item android:id="@+id/nav_reportes" android:title="Reportes"/>
-    <item android:id="@+id/nav_cerrar" android:title="Cerrar sesión"/>
+    <item
+        android:id="@+id/nav_dashboard"
+        android:title="Dashboard"/>
+
+    <item
+        android:id="@+id/nav_parqueaderos"
+        android:title="Parqueaderos"/>
+
+    <item
+        android:id="@+id/nav_usuarios"
+        android:title="Usuarios"/>
 
 </menu>
