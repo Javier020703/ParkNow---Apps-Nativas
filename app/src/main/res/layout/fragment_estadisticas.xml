@@ -1,0 +1,60 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F6FA">
+
+    <LinearLayout
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Estadísticas"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- GRAFICO FAKE -->
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:background="#DDE3F0"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <View android:layout_width="20dp" android:layout_height="80dp" android:background="#4CAF50"/>
+            <View android:layout_width="20dp" android:layout_height="120dp" android:background="#2196F3"/>
+            <View android:layout_width="20dp" android:layout_height="150dp" android:background="#3F51B5"/>
+            <View android:layout_width="20dp" android:layout_height="100dp" android:background="#00BCD4"/>
+
+        </LinearLayout>
+
+        <!-- TARJETAS -->
+        <TextView
+            android:text="Total Reservas: 1847"
+            android:layout_marginTop="16dp"
+            android:padding="12dp"
+            android:background="#E3F2FD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Ingresos Mes: $52,340"
+            android:padding="12dp"
+            android:background="#E8F5E9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Ocupación: 87.5%"
+            android:padding="12dp"
+            android:background="#FFF3E0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</ScrollView>

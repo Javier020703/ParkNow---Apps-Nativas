@@ -1,15 +1,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:id="@+id/nav_dashboard" android:title="Dashboard"/>
+    <item android:id="@+id/nav_parqueaderos" android:title="Parqueaderos"/>
+    <item android:id="@+id/nav_reservas" android:title="Reservas"/>
+    <item android:id="@+id/nav_usuarios" android:title="Usuarios"/>
+    <item android:id="@+id/nav_tarifas" android:title="Tarifas"/>
+    <item android:id="@+id/nav_espacios" android:title="Espacios"/>
+    <item android:id="@+id/nav_reports" android:title="Reportes"/>
+    <item android:id="@+id/nav_heatmap" android:title="Mapa de Calor"/>
+    <item android:id="@+id/nav_settings" android:title="Configuración"/>
     <item
-        android:id="@+id/nav_dashboard"
-        android:title="Dashboard"/>
+        android:id="@+id/nav_roles"
+        android:title="Roles" />
 
     <item
-        android:id="@+id/nav_parqueaderos"
-        android:title="Parqueaderos"/>
-
-    <item
-        android:id="@+id/nav_usuarios"
-        android:title="Usuarios"/>
+        android:id="@+id/nav_notificaciones"
+        android:title="Notificaciones" />
 
 </menu>

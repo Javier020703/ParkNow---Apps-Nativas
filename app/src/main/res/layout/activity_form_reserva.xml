@@ -1,0 +1,71 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- TÍTULO -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear / Editar Reserva"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="16dp" />
+
+        <!-- CLIENTE -->
+        <EditText
+            android:id="@+id/etCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del cliente"
+            android:padding="12dp"
+            android:background="@drawable/card_bg" />
+
+        <!-- PARQUEADERO -->
+        <EditText
+            android:id="@+id/etParqueadero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Parqueadero"
+            android:padding="12dp"
+            android:background="@drawable/card_bg"
+            android:layout_marginTop="12dp" />
+
+        <!-- ESPACIO -->
+        <EditText
+            android:id="@+id/etEspacio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Espacio (Ej: A-15)"
+            android:padding="12dp"
+            android:background="@drawable/card_bg"
+            android:layout_marginTop="12dp" />
+
+        <!-- HORA -->
+        <EditText
+            android:id="@+id/etHora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hora (Ej: 14:30)"
+            android:padding="12dp"
+            android:background="@drawable/card_bg"
+            android:layout_marginTop="12dp" />
+
+        <!-- BOTÓN GUARDAR -->
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar Reserva"
+            android:layout_marginTop="24dp" />
+
+    </LinearLayout>
+
+</ScrollView>

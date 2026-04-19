@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest package="com.example.parknow1"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
@@ -12,24 +13,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ParkNow1">
 
+        <!-- 🔥 ADMIN (ENTRY POINT) -->
         <activity
             android:name=".ui.admin.AdminActivity"
             android:exported="true">
-
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
         </activity>
 
-        <activity
-            android:name=".ui.user.PruebaActivity"
-            android:exported="false" />
+        <!-- 🔹 RESERVAS -->
+        <activity android:name=".ui.admin.reservations.FormReservaActivity"/>
+        <activity android:name=".ui.admin.reservations.DetalleReservaActivity"/>
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+        <!-- 🔹 PARQUEADEROS -->
+        <activity android:name=".ui.admin.activities.FormParqueaderoActivity"/>
+        <activity android:name=".ui.admin.activities.VerParqueaderoActivity"/>
+
+        <!-- 🔹 USUARIOS -->
+        <activity android:name=".ui.admin.users.FormUsuarioActivity"/>
+        <activity android:name=".ui.admin.users.DetalleUsuarioActivity"/>
+
+        <!-- 🔹 TARIFAS -->
+        <activity android:name=".ui.admin.tarifas.FormTarifaActivity"/>
+
+        <!-- 🔹 USER APP -->
+        <activity android:name=".ui.user.PruebaActivity"/>
+
+        <!-- 🔹 MAIN (NO launcher) -->
+        <activity android:name=".MainActivity"/>
 
     </application>
 

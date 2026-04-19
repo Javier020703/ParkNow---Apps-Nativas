@@ -1,0 +1,10 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvEspacio"
+    android:layout_width="60dp"
+    android:layout_height="40dp"
+    android:gravity="center"
+    android:text="A-1"
+    android:textColor="@android:color/white"
+    android:textStyle="bold"
+    android:layout_margin="4dp"
+    android:background="@drawable/bg_espacio_libre"/>
