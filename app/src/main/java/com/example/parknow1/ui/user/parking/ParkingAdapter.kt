@@ -1,12 +1,12 @@
-package com.example.parknow.ui.parking
+package com.example.parknow1.ui.user.parking
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.parknow.R
 import com.example.parknow.data.model.ParkingSpot
+import com.example.parknow1.R
 
 class ParkingAdapter(
     private val list: List<ParkingSpot>,

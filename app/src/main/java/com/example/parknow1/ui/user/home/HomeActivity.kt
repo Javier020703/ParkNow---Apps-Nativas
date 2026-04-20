@@ -1,14 +1,15 @@
-package com.example.parknow.ui.home
+package com.example.parknow1.ui.user.home
+
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.parknow.R
 import com.example.parknow.data.model.ParkingSpot
 import com.example.parknow.ui.map.MapActivity
 import com.example.parknow.ui.parking.ParkingAdapter
+import com.example.parknow1.R
 
 class HomeActivity : AppCompatActivity() {
 

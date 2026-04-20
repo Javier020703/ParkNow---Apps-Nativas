@@ -118,4 +118,9 @@
     <string name="rol_administrador">Rol: Administrador</string>
     <string name="ver">Ver</string>
     <string name="admin_parknow">Admin ParkNow</string>
+    <string name="continuar">Continuar</string>
+    <string name="subtotal_0_0">Subtotal: $0.0</string>
+    <string name="hora_hh_mm">Hora (hh:mm)</string>
+    <string name="fecha_dd_mm_yyyy">Fecha (dd/mm/yyyy)</string>
+    <string name="parqueadero_centro">Parqueadero Centro</string>
 </resources>

@@ -16,58 +16,76 @@
             android:text="Nueva Reserva"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#023E8A"/>
+            android:textColor="#023E8A"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <!-- Parqueadero -->
         <LinearLayout
             android:layout_marginTop="16dp"
             android:padding="16dp"
             android:background="@drawable/card_bg"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
 
             <TextView
                 android:text="Parqueadero"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
             <TextView
                 android:id="@+id/tvParkingName"
-                android:text="Parqueadero Centro"/>
+                android:text="@string/parqueadero_centro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
 
         <!-- Fecha -->
         <EditText
             android:id="@+id/etDate"
-            android:hint="Fecha (dd/mm/yyyy)"
+            android:hint="@string/fecha_dd_mm_yyyy"
             android:layout_marginTop="16dp"
             android:padding="12dp"
-            android:background="@drawable/card_bg"/>
+            android:background="@drawable/card_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <!-- Hora -->
         <EditText
             android:id="@+id/etTime"
-            android:hint="Hora (hh:mm)"
+            android:hint="@string/hora_hh_mm"
             android:layout_marginTop="12dp"
             android:padding="12dp"
-            android:background="@drawable/card_bg"/>
+            android:background="@drawable/card_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
 
         <!-- Duración -->
         <Spinner
             android:id="@+id/spDuration"
             android:layout_marginTop="12dp"
-            android:background="@drawable/card_bg"/>
+            android:background="@drawable/card_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <!-- Subtotal -->
         <TextView
             android:id="@+id/tvSubtotal"
-            android:text="Subtotal: $0.0"
+            android:text="@string/subtotal_0_0"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <!-- Botón -->
         <Button
             android:id="@+id/btnContinue"
-            android:text="Continuar"
+            android:text="@string/continuar"
             android:layout_marginTop="24dp"
             android:background="@drawable/button_bg"
             android:textColor="#FFFFFF"

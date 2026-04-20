@@ -1,11 +1,13 @@
-package com.example.parknow.ui.reservation
+package com.example.parknow1.ui.user.reservation
 
+//noinspection SuspiciousImport
+import android.R
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.parknow.R
-import com.example.parknow.ui.payment.PaymentActivity
+import com.example.parknow1.ui.user.payment.PaymentActivity
 
 class ReservationActivity : AppCompatActivity() {
 
@@ -21,13 +23,13 @@ class ReservationActivity : AppCompatActivity() {
 
         // Opciones del spinner
         val options = arrayOf("1 hora", "2 horas", "3 horas", "4 horas")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, options)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        val adapter = ArrayAdapter(this, R.layout.simple_spinner_item, options)
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
         spDuration.adapter = adapter
 
         // Cambio de selección
         spDuration.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: android.view.View?, position: Int, id: Long) {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val hours = position + 1
                 val subtotal = hours * pricePerHour
                 tvSubtotal.text = "Subtotal: $${subtotal}"

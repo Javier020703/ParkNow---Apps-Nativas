@@ -1,10 +1,10 @@
-package com.example.parknow.ui.payment
+package com.example.parknow1.ui.user.payment
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.parknow.R
+import com.example.parknow1.R
 
 class PaymentActivity : AppCompatActivity() {
 

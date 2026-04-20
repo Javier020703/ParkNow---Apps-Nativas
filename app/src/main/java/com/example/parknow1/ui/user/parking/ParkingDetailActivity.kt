@@ -1,11 +1,11 @@
-package com.example.parknow.ui.parking
+package com.example.parknow1.ui.user.parking
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.parknow.R
 import com.example.parknow.ui.reservation.ReservationActivity
+import com.example.parknow1.R
 
 class ParkingDetailActivity : AppCompatActivity() {
 
