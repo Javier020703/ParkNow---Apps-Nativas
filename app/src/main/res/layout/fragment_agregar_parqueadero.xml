@@ -1,39 +1,102 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:orientation="vertical"
-android:padding="16dp"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
-
-<EditText
-    android:id="@+id/etNombre"
-    android:hint="Nombre"
+    android:orientation="vertical"
+    android:background="@color/background"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+    android:layout_height="match_parent">
 
-<EditText
-    android:id="@+id/etDireccion"
-    android:hint="Dirección"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
-
-<EditText
-    android:id="@+id/etCupos"
-    android:hint="Cupos"
-    android:inputType="number"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
-
-
-    <EditText
-        android:id="@+id/etTarifa"
+    <!--  BARRA NEGRA -->
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Tarifa por hora"/>
+        android:text="@string/parqueaderos"
+        android:textColor="@android:color/white"
+        android:background="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="16dp"/>
 
-<Button
-    android:id="@+id/btnGuardar"
-    android:text="Guardar"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+    <!-- CONTENIDO -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--  CARD -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="16dp"
+            android:elevation="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- HEADER -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/crear_parqueadero"
+                android:textColor="@android:color/white"
+                android:background="@color/primary"
+                android:padding="12dp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <!-- NOMBRE -->
+            <EditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="@string/nombre"
+                android:background="@drawable/bg_input"
+                android:padding="12dp"
+                android:layout_marginTop="12dp"/>
+
+            <!-- DIRECCIÓN -->
+            <EditText
+                android:id="@+id/etDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="@string/direcci_n"
+                android:background="@drawable/bg_input"
+                android:padding="12dp"
+                android:layout_marginTop="10dp"/>
+
+            <!-- CUPOS -->
+            <EditText
+                android:id="@+id/etCupos"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="@string/cantidad_de_cupos"
+                android:inputType="number"
+                android:background="@drawable/bg_input"
+                android:padding="12dp"
+                android:layout_marginTop="10dp"/>
+
+            <!-- TARIFA -->
+            <EditText
+                android:id="@+id/etTarifa"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="@string/tarifa_por_hora"
+                android:inputType="numberDecimal"
+                android:background="@drawable/bg_input"
+                android:padding="12dp"
+                android:layout_marginTop="10dp"/>
+
+            <!-- BOTÓN -->
+            <Button
+                android:id="@+id/btnGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/guardar_parqueadero"
+                android:backgroundTint="@color/primary"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="18dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

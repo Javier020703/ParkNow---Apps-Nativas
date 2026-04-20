@@ -1,51 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:background="@drawable/card_bg"
     android:padding="14dp"
-    android:layout_marginBottom="10dp"
+    android:layout_marginBottom="12dp"
+    android:elevation="3dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <!-- HEADER -->
     <TextView
         android:id="@+id/tvNombre"
+        android:text="@string/juan_p_rez"
         android:textStyle="bold"
         android:textSize="16sp"
+        android:textColor="@color/text_primary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <!-- CORREO -->
     <TextView
         android:id="@+id/tvCorreo"
+        android:text="@string/juan_email_com"
+        android:textSize="13sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginTop="4dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <!-- INFO EXTRA -->
     <TextView
         android:id="@+id/tvInfo"
+        android:text="@string/rol_administrador"
+        android:textSize="12sp"
+        android:textColor="@color/primary"
+        android:layout_marginTop="2dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <!-- DIVISOR -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_border"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="6dp"/>
+
+    <!-- ACCIONES -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end">
+        android:gravity="end"
+        android:orientation="horizontal">
 
-        <Button
+        <ImageButton
             android:id="@+id/btnVer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ver"/>
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_view"
+            android:tint="@color/primary"
+            android:contentDescription="@string/ver"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/btnEditar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Editar"/>
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_edit"
+            android:tint="@color/primary"
+            android:contentDescription="@string/editar"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/btnEliminar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="X"/>
-
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:tint="@android:color/holo_red_dark"
+            android:contentDescription="@string/eliminar"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
     </LinearLayout>
 
 </LinearLayout>

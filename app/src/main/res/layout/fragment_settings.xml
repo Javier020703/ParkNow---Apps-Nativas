@@ -1,39 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="CONFIGURACIÓN"
-        android:textColor="@android:color/white"
-        android:background="@color/black"
-        android:padding="16dp"
-        android:textStyle="bold"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_margin="16dp"
-        android:padding="16dp"
-        android:background="@android:color/white"
-        android:elevation="6dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Switch
-            android:id="@+id/switchNotif"
-            android:text="Notificaciones"
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
 
-        <Switch
-            android:id="@+id/switchAuto"
-            android:text="Reservas automáticas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <!-- CARD: PREFERENCIAS -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@android:color/white"
+                android:elevation="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    </LinearLayout>
+                <TextView
+                    android:text="@string/preferencias"
+                    android:background="@color/primary"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <!-- NOTIFICACIONES -->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="@string/notificaciones"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="@string/alertas_de_reservas_y_eventos"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <Switch
+                        android:id="@+id/switchNotif"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/gray_border"/>
+
+                <!-- AUTO -->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="@string/reservas_autom_ticas"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="@string/asignaci_n_inteligente_de_espacios"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <Switch
+                        android:id="@+id/switchAuto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--  CARD: APARIENCIA -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@android:color/white"
+                android:elevation="6dp"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/apariencia"
+                    android:background="@color/primary"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:id="@+id/btnModoOscuro"
+                    android:text="@string/activar_modo_oscuro"
+                    android:layout_margin="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+
+            </LinearLayout>
+
+            <!--  CARD: SISTEMA -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@android:color/white"
+                android:elevation="6dp"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/sistema"
+                    android:background="@color/primary"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:id="@+id/btnIdioma"
+                    android:text="@string/cambiar_idioma"
+                    android:layout_margin="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+
+                <Button
+                    android:id="@+id/btnCerrarSesion"
+                    android:text="@string/cerrar_sesi_n"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:layout_margin="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+
+            </LinearLayout>
+
+            <!--  CARD: INFO -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@android:color/white"
+                android:elevation="6dp"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/acerca_de"
+                    android:background="@color/primary"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="@string/versi_n_1_0_0"
+                    android:padding="12dp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
