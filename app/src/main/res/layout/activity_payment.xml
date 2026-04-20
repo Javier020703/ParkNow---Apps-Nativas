@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#F5F5F5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Título -->
+        <TextView
+            android:text="Confirmar Pago"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#023E8A"/>
+
+        <!-- Resumen -->
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="Resumen"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvParking"
+                android:text="Parqueadero: Centro"/>
+
+            <TextView
+                android:id="@+id/tvDuration"
+                android:text="Duración: 2 horas"/>
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:text="Tarifa: $4/hora"/>
+
+            <TextView
+                android:id="@+id/tvTotal"
+                android:text="Total: $8.00"
+                android:textStyle="bold"
+                android:textColor="#0077B6"/>
+        </LinearLayout>
+
+        <!-- Método de pago -->
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="Método de Pago"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:text="**** 4532"/>
+        </LinearLayout>
+
+        <!-- Botón pagar -->
+        <Button
+            android:id="@+id/btnPay"
+            android:text="Pagar $8.00"
+            android:layout_marginTop="24dp"
+            android:background="#00C853"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

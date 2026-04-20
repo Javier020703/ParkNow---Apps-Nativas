@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gris_fondo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- CARD PRINCIPAL -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg">
+
+            <!-- HEADER -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bienvenida"
+                android:background="@color/azul_medio"
+                android:textColor="@color/blanco"
+                android:padding="12dp"
+                android:textAlignment="center"
+                android:textStyle="bold"/>
+
+            <!-- CONTENIDO -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¡Bienvenido a ParkNow!"
+                    android:textStyle="bold"
+                    android:textColor="@color/azul_medio"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- ITEM 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/celeste"
+                    android:padding="12dp"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Encuentra espacios fácilmente"/>
+                </LinearLayout>
+
+                <!-- ITEM 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/celeste"
+                    android:padding="12dp"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reserva en tiempo real"/>
+                </LinearLayout>
+
+                <!-- ITEM 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/celeste"
+                    android:padding="12dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pago digital seguro"/>
+                </LinearLayout>
+
+                <!-- BOTÓN -->
+                <Button
+                    android:id="@+id/btnComenzar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Comenzar"
+                    android:textColor="@color/blanco"
+                    android:background="@drawable/button_bg"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

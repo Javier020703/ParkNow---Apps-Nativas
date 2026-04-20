@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header -->
+        <TextView
+            android:text="Hola, Juan"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#023E8A"/>
+
+        <!-- Buscador -->
+        <EditText
+            android:id="@+id/etSearch"
+            android:hint="Buscar parqueadero..."
+            android:layout_marginTop="12dp"
+            android:padding="12dp"
+            android:background="@drawable/card_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Card espacios cercanos -->
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Espacios Cercanos"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:text="5 parqueaderos disponibles"/>
+        </LinearLayout>
+
+        <!-- Lista -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerParking"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

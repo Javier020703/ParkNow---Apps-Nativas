@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#F5F5F5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Nombre -->
+        <TextView
+            android:id="@+id/tvName"
+            android:text="Parqueadero Centro"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#023E8A"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Dirección -->
+        <TextView
+            android:id="@+id/tvLocation"
+            android:text="Calle 45 #23-12"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Card info -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Disponibles"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvAvailable"
+                    android:text="15/30"
+                    android:textColor="#00B4D8"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Tarifa"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:text="$4/hora"
+                    android:textColor="#0077B6"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Servicios -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Servicios:"
+                android:textStyle="bold"/>
+
+            <TextView android:text="✔ Vigilancia 24/7"/>
+            <TextView android:text="✔ Techado"/>
+            <TextView android:text="✔ Cámaras de seguridad"/>
+        </LinearLayout>
+
+        <!-- Botón -->
+        <Button
+            android:id="@+id/btnReserve"
+            android:text="Reservar Espacio"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_bg"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

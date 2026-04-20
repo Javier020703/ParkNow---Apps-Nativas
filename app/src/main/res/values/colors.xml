@@ -10,4 +10,11 @@
     <color name="background">#F5F7FA</color>
     <color name="gray_border">#E0E0E0</color>
     <color name="black">#000000</color>
+
+    <color name="azul_oscuro">#023E8A</color>
+    <color name="azul_medio">#0077B6</color>
+    <color name="azul_claro">#00B4D8</color>
+    <color name="celeste">#90E0EF</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="gris_fondo">#F5F5F5</color>
 </resources>
