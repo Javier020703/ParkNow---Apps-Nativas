@@ -12,15 +12,14 @@ class FormUsuarioActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // 👇 ESTE NOMBRE DEBE COINCIDIR CON TU XML
         setContentView(R.layout.activity_form_usuario)
 
-        // 🔹 REFERENCIAS A LOS ELEMENTOS
+        // REFERENCIAS A LOS ELEMENTOS
         val etNombre = findViewById<EditText>(R.id.etNombre)
         val etCorreo = findViewById<EditText>(R.id.etCorreo)
         val btnGuardar = findViewById<Button>(R.id.btnGuardar)
 
-        // 🔹 BOTÓN GUARDAR
+        // BOTÓN GUARDAR
         btnGuardar.setOnClickListener {
 
             val nombre = etNombre.text.toString().trim()
@@ -31,7 +30,7 @@ class FormUsuarioActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // 🔥 AQUÍ LUEGO CONECTAMOS CON EL CRUD REAL
+            //  luego conectamos crud real
             Toast.makeText(this, "Usuario guardado", Toast.LENGTH_SHORT).show()
 
             // Limpiar campos

@@ -1,55 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@android:color/white"
-    android:layout_marginBottom="10dp"
+    android:padding="14dp"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_input"
+    android:elevation="3dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:elevation="3dp">
+    android:layout_height="wrap_content">
 
+    <!-- HEADER -->
     <TextView
         android:id="@+id/tvNombre"
+        android:text="@string/tarifa_b_sica"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nombre"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content"/>
 
+    <!-- PRECIO DESTACADO -->
     <TextView
         android:id="@+id/tvPrecio"
+        android:text="@string/_3_000_hora"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:layout_marginTop="4dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Precio"
-        android:textSize="16sp"
-        android:layout_marginTop="4dp" />
+        android:layout_height="wrap_content"/>
 
+    <!-- DESCRIPCIÓN -->
     <TextView
         android:id="@+id/tvDescripcion"
+        android:text="@string/horario_diurno"
+        android:textSize="13sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginTop="4dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Descripción"
-        android:textSize="14sp"
-        android:layout_marginTop="4dp" />
+        android:layout_height="wrap_content"/>
 
+    <!-- BOTONES -->
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/btnEditar"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:layout_weight="1"
-            android:text="Editar" />
+            android:text="@string/editar"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/primary"/>
 
         <Button
             android:id="@+id/btnEliminar"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:layout_weight="1"
-            android:text="Eliminar" />
+            android:text="@string/eliminar"
+            android:textColor="@android:color/holo_red_dark"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_marginStart="8dp"/>
     </LinearLayout>
 
 </LinearLayout>

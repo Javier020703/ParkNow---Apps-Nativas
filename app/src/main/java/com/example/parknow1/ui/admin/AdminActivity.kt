@@ -55,9 +55,7 @@ class AdminActivity : AppCompatActivity() {
         }
     }
 
-    // ===============================
     //  TOOLBAR
-    // ===============================
     private fun configurarToolbar() {
         setSupportActionBar(toolbar)
         supportActionBar?.title = "Admin Panel"
@@ -66,7 +64,6 @@ class AdminActivity : AppCompatActivity() {
 
 
     //  DRAWER
-
     private fun configurarDrawer() {
 
         val toggle = ActionBarDrawerToggle(
@@ -126,7 +123,7 @@ class AdminActivity : AppCompatActivity() {
 
             abrirFragment(fragment, titulo)
 
-            // sincroniza bottom nav
+            // sincroniza bottom de navegacion
             if (bottomItem != -1) {
                 bottomNav.selectedItemId = bottomItem
             } else {
@@ -139,7 +136,7 @@ class AdminActivity : AppCompatActivity() {
     }
 
 
-    //  BOTTOM NAV
+    //  BOTTOM navegacion
     private fun configurarBottomNav() {
 
         bottomNav.setOnItemSelectedListener {
@@ -166,9 +163,7 @@ class AdminActivity : AppCompatActivity() {
         }
     }
 
-
     //  CAMBIO DE FRAGMENT
-
     private fun abrirFragment(fragment: Fragment, titulo: String) {
 
         supportFragmentManager.beginTransaction()
@@ -179,7 +174,6 @@ class AdminActivity : AppCompatActivity() {
     }
 
     //  BACK BUTTON
-
     private fun manejarBack() {
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {

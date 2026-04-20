@@ -18,7 +18,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="PKN-8542"
+            android:text="@string/pkn_8542"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="@color/text_primary" />
@@ -27,7 +27,7 @@
             android:id="@+id/tvEstado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Activa"
+            android:text="@string/activa"
             android:textStyle="bold"
             android:textColor="@color/green" />
     </LinearLayout>
@@ -37,7 +37,7 @@
         android:id="@+id/tvCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Juan Pérez"
+        android:text="@string/juan_p_rez"
         android:textSize="15sp"
         android:textColor="@color/text_secondary"
         android:layout_marginTop="4dp" />
@@ -47,7 +47,7 @@
         android:id="@+id/tvInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Centro • A-15 • 14:30"
+        android:text="@string/centro_a_15_14_30"
         android:textSize="13sp"
         android:textColor="@color/text_secondary"
         android:layout_marginTop="2dp" />

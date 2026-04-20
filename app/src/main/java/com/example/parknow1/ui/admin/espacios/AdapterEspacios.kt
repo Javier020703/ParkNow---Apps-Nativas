@@ -26,7 +26,6 @@ class AdapterEspacios(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = lista[position]
 
-        // 🔥 CORREGIDO (ANTES DECÍA nombre)
         holder.tvEspacio.text = item.codigo
 
         when (item.estado) {
@@ -35,7 +34,7 @@ class AdapterEspacios(
             "RESERVADO" -> holder.tvEspacio.setBackgroundResource(R.drawable.bg_espacio_reservado)
         }
 
-        // 🔥 CRUD VISUAL
+        //  CRUD VISUAL
         holder.itemView.setOnClickListener {
             item.estado = when (item.estado) {
                 "LIBRE" -> "OCUPADO"

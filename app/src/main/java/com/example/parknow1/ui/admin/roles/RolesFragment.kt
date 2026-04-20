@@ -38,7 +38,6 @@ class RolesFragment : Fragment() {
 
             val nombre = etNombre.text.toString()
 
-            //  AQUÍ ESTABA TU ERROR
             val permisos = etPermisos.text.toString()
                 .split(",")
                 .map { it.trim() }

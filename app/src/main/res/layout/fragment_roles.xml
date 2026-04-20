@@ -1,50 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- HEADER NEGRO -->
-    <TextView
-        android:text="GESTIÓN DE ROLES"
-        android:textColor="@android:color/white"
-        android:background="@color/black"
-        android:textStyle="bold"
-        android:padding="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
+    <!-- CONTENIDO -->
     <LinearLayout
         android:orientation="vertical"
         android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/etNombreRol"
-            android:hint="Nombre del rol"
+        <!--  CARD -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:elevation="6dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/etPermisosRol"
-            android:hint="Permisos (separados por coma)"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <!-- HEADER -->
+            <TextView
+                android:text="@string/administrar_roles"
+                android:textColor="@android:color/white"
+                android:background="@color/primary"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-        <Button
-            android:id="@+id/btnAgregarRol"
-            android:text="Agregar Rol"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <!-- FORMULARIO -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerRoles"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+                <!-- NOMBRE -->
+                <EditText
+                    android:id="@+id/etNombreRol"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="@string/nombre_del_rol"
+                    android:background="@drawable/bg_input"
+                    android:padding="12dp"/>
+
+                <!-- PERMISOS -->
+                <EditText
+                    android:id="@+id/etPermisosRol"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="@string/permisos_separados_por_coma"
+                    android:background="@drawable/bg_input"
+                    android:padding="12dp"
+                    android:layout_marginTop="10dp"/>
+
+                <!-- BOTÓN -->
+                <Button
+                    android:id="@+id/btnAgregarRol"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="@string/agregar_rol"
+                    android:backgroundTint="@color/primary"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="12dp"/>
+
+            </LinearLayout>
+
+            <!-- SEPARADOR -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_border"
+                android:layout_marginTop="6dp"/>
+
+            <!-- LISTA -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerRoles"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="12dp"
+                android:clipToPadding="false"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

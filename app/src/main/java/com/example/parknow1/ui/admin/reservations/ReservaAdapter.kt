@@ -29,16 +29,16 @@ class ReservaAdapter(
 
         val reserva = lista[position]
 
-        // 🔹 DATOS PRINCIPALES
+        //  DATOS PRINCIPALES
         holder.binding.tvCodigo.text = reserva.codigo
         holder.binding.tvCliente.text = reserva.cliente
         holder.binding.tvEstado.text = reserva.estado
 
-        // 🔹 INFO EXTRA (IMPORTANTE)
+        //  INFO EXTRA
         holder.binding.tvInfo.text =
             "${reserva.parqueadero} • ${reserva.espacio} • ${reserva.hora}"
 
-        // 🔹 COLOR DINÁMICO DEL ESTADO
+        // COLOR DINÁMICO DEL ESTADO
         val context = holder.itemView.context
 
         when (reserva.estado) {
@@ -53,14 +53,14 @@ class ReservaAdapter(
             )
         }
 
-        // 🔹 VER DETALLE
+        // VER DETALLE
         holder.binding.btnVer.setOnClickListener {
             val intent = Intent(context, DetalleReservaActivity::class.java)
             intent.putExtra("pos", position)
             context.startActivity(intent)
         }
 
-        // 🔹 EDITAR
+        //  EDITAR
         holder.binding.btnEditar.setOnClickListener {
             val intent = Intent(context, FormReservaActivity::class.java)
             intent.putExtra("pos", position)

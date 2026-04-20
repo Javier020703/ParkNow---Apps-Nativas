@@ -19,7 +19,7 @@ class AgregarParqueaderoFragment(
         val nombre = view.findViewById<EditText>(R.id.etNombre)
         val direccion = view.findViewById<EditText>(R.id.etDireccion)
         val cupos = view.findViewById<EditText>(R.id.etCupos)
-        val tarifa = view.findViewById<EditText>(R.id.etTarifa) // 🔥 NUEVO
+        val tarifa = view.findViewById<EditText>(R.id.etTarifa)
         val btnGuardar = view.findViewById<Button>(R.id.btnGuardar)
 
         btnGuardar.setOnClickListener {
@@ -28,7 +28,7 @@ class AgregarParqueaderoFragment(
                 nombre.text.toString(),
                 direccion.text.toString(),
                 cupos.text.toString().toIntOrNull() ?: 0,
-                tarifa.text.toString() // 🔥 AGREGADO
+                tarifa.text.toString()
             )
 
             lista.add(nuevo)

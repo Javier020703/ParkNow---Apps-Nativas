@@ -43,7 +43,7 @@ class EspaciosFragment : Fragment() {
             actualizarResumen()
         }
 
-        // 🔍 BUSCADOR
+        //  BUSCADOR
         buscador.addTextChangedListener(object : TextWatcher {
 
             override fun afterTextChanged(s: Editable?) {}

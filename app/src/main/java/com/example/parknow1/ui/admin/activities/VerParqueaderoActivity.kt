@@ -19,7 +19,7 @@ class VerParqueaderoActivity : AppCompatActivity() {
         val espacios = findViewById<TextView>(R.id.tvEspacios)
         val tarifa = findViewById<TextView>(R.id.tvTarifa)
 
-        // 🔵 datos fake (luego los conectamos)
+        // simular datos
         nombre.text = "Parqueadero Centro"
         direccion.text = "Calle 45 #23-10"
         espacios.text = "Espacios: 30"

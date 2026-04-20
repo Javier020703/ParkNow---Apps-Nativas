@@ -1,22 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerReservas"
+    <!-- CONTENIDO -->
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="12dp"/>
+        android:layout_height="match_parent">
 
+
+        <!-- CONTENIDO INTERNO -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--  CARD -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@android:color/white"
+                android:elevation="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- HEADER -->
+                <TextView
+                    android:text="@string/lista_de_reservas"
+                    android:textColor="@android:color/white"
+                    android:background="@color/primary"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <!-- LISTA -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerReservas"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:clipToPadding="false"
+                    android:paddingBottom="80dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- BOTON  ADICIONAR -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAgregar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:tint="@android:color/white"
-        android:backgroundTint="@color/primary"
         android:src="@android:drawable/ic_input_add"
         android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"/>
+        android:layout_margin="20dp"
+        app:backgroundTint="@color/primary"/>
 
 </FrameLayout>

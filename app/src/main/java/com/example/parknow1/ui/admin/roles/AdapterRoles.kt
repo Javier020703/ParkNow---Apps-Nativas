@@ -33,10 +33,10 @@ class AdapterRoles(
 
         holder.tvNombreRol.text = item.nombre
 
-        // 🔥 FIX ERROR LIST → STRING
+
         holder.tvPermisos.text = item.permisos.joinToString("\n• ", "• ")
 
-        // 🔥 CRUD DELETE (click largo)
+        //  CRUD eliminar
         holder.itemView.setOnLongClickListener {
             lista.removeAt(position)
             notifyDataSetChanged()

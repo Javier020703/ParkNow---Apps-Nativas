@@ -1,27 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:background="@color/background"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
-    <EditText
-        android:id="@+id/etNombre"
+    <!-- BARRA SUPERIOR  -->
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre" />
+        android:text="@string/usuario"
+        android:textColor="@android:color/white"
+        android:background="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:paddingTop="32dp" />
 
-    <EditText
-        android:id="@+id/etCorreo"
+    <!--  SCROLL  -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Correo"
-        android:layout_marginTop="10dp" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnGuardar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Guardar"
-        android:layout_marginTop="20dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--  CARD -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/card_bg"
+                android:padding="18dp"
+                android:elevation="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- HEADER -->
+                <TextView
+                    android:text="@string/crear_editar_usuario"
+                    android:textColor="@android:color/white"
+                    android:background="@color/primary"
+                    android:padding="12dp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <!-- NOMBRE -->
+                <EditText
+                    android:id="@+id/etNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="@string/nombre"
+                    android:background="@drawable/bg_input"
+                    android:padding="12dp"
+                    android:layout_marginTop="14dp" />
+
+                <!-- CORREO -->
+                <EditText
+                    android:id="@+id/etCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="@string/correo_electr_nico"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/bg_input"
+                    android:padding="12dp"
+                    android:layout_marginTop="10dp" />
+
+                <!-- BOTÓN -->
+                <Button
+                    android:id="@+id/btnGuardar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="@string/guardar_usuario"
+                    android:backgroundTint="@color/primary"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

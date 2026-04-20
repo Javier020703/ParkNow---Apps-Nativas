@@ -1,35 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="16dp"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_input"
+    android:padding="12dp"
     android:layout_marginBottom="10dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:elevation="2dp">
 
-    <TextView
-        android:id="@+id/tvTituloNotif"
-        android:text="Título"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:textColor="#000"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <!-- ICONO -->
+    <View
+        android:layout_width="8dp"
+        android:layout_height="match_parent"
+        android:background="@color/primary"
+        android:layout_marginEnd="10dp"/>
 
-    <TextView
-        android:id="@+id/tvMensajeNotif"
-        android:text="Mensaje"
-        android:textColor="#555"
-        android:layout_marginTop="4dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <!-- CONTENIDO -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvFechaNotif"
-        android:text="Hace 5 min"
-        android:textSize="12sp"
-        android:textColor="#999"
-        android:layout_marginTop="6dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <!-- TITULO -->
+        <TextView
+            android:id="@+id/tvTituloNotif"
+            android:text="@string/t_tulo"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/text_primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- MENSAJE -->
+        <TextView
+            android:id="@+id/tvMensajeNotif"
+            android:text="@string/mensaje"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- FECHA -->
+        <TextView
+            android:id="@+id/tvFechaNotif"
+            android:text="@string/hace_5_min"
+            android:textSize="11sp"
+            android:textColor="@color/gray_border"
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -1,18 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="12dp">
+    android:background="@color/background">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerTarifas"
+    <!-- CONTENIDO -->
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
 
+
+        <!-- CONTENIDO INTERNO -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--  CARD -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@android:color/white"
+                android:elevation="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- HEADER -->
+                <TextView
+                    android:text="@string/lista_de_tarifas"
+                    android:textColor="@android:color/white"
+                    android:background="@color/primary"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <!-- LISTA -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerTarifas"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:clipToPadding="false"
+                    android:paddingBottom="80dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- BOTON AGREGAR  F -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAgregar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_input_add"
         android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"/>
+        android:layout_margin="20dp"
+        android:src="@android:drawable/ic_input_add"
+        android:contentDescription="@string/agregar_tarifa"
+        app:backgroundTint="@color/primary"
+        app:tint="@android:color/white"/>
+
 </FrameLayout>

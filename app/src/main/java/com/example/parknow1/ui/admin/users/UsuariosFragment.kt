@@ -32,7 +32,7 @@ class UsuariosFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        adapter.notifyDataSetChanged() // 🔥 refresca
+        adapter.notifyDataSetChanged() //Sirve para refrescar
     }
 
     override fun onDestroyView() {
