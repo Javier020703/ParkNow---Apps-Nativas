@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parknow.data.model.ParkingSpot
-import com.example.parknow.ui.map.MapActivity
-import com.example.parknow.ui.parking.ParkingAdapter
+import com.example.parknow1.ui.user.map.MapActivity
+import com.example.parknow1.ui.user.parking.ParkingAdapter
 import com.example.parknow1.R
 
 class HomeActivity : AppCompatActivity() {

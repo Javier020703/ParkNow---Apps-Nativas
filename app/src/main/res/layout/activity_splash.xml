@@ -32,7 +32,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="P"
+                android:text="@string/p"
                 android:textColor="#FFFFFF"
                 android:textSize="42sp"
                 android:textStyle="bold"
@@ -43,7 +43,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ParkNow"
+            android:text="@string/parknow"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:layout_marginTop="20dp"/>
@@ -52,7 +52,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Smart Parking"
+            android:text="@string/smart_parking"
             android:textColor="#FFFFFF"
             android:textSize="14sp"/>
 

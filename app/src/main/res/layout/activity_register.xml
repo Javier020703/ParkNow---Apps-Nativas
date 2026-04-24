@@ -11,7 +11,7 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- CARD -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -19,11 +19,11 @@
             android:background="@drawable/card_bg"
             android:paddingBottom="16dp">
 
-            <!-- HEADER -->
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Registro"
+                android:text="@string/registro"
                 android:background="@color/azul_medio"
                 android:textColor="@color/blanco"
                 android:textAlignment="center"
@@ -31,74 +31,74 @@
                 android:padding="14dp"
                 android:textSize="16sp"/>
 
-            <!-- CONTENIDO -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <!-- TÍTULO -->
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Crear Cuenta"
+                    android:text="@string/crear_cuenta"
                     android:textStyle="bold"
                     android:textSize="18sp"
                     android:textColor="#333333"
                     android:layout_marginBottom="16dp"/>
 
-                <!-- NOMBRE -->
+
                 <EditText
                     android:id="@+id/etName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nombre completo"
+                    android:hint="@string/nombre_completo"
                     android:padding="12dp"
                     android:layout_marginBottom="12dp"
                     android:background="@android:drawable/edit_text"/>
 
-                <!-- EMAIL -->
+
                 <EditText
                     android:id="@+id/etEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Correo electrónico"
+                    android:hint="@string/correo_electr_nico"
                     android:inputType="textEmailAddress"
                     android:padding="12dp"
                     android:layout_marginBottom="12dp"
                     android:background="@android:drawable/edit_text"/>
 
-                <!-- TELÉFONO -->
+
                 <EditText
                     android:id="@+id/etPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Teléfono"
+                    android:hint="@string/tel_fono"
                     android:inputType="phone"
                     android:padding="12dp"
                     android:layout_marginBottom="12dp"
                     android:background="@android:drawable/edit_text"/>
 
-                <!-- PASSWORD -->
+
                 <EditText
                     android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Contraseña"
+                    android:hint="@string/contrase_a"
                     android:inputType="textPassword"
                     android:padding="12dp"
                     android:layout_marginBottom="20dp"
                     android:background="@android:drawable/edit_text"/>
 
-                <!-- BOTÓN -->
+
                 <Button
                     android:id="@+id/btnRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Registrarse"
-                    android:textColor="@color/blanco"
-                    android:background="@drawable/button_bg"
+                    android:text="@string/registrarse"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/azul_medio"
                     android:padding="14dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"/>

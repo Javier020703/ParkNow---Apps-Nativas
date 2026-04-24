@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.parknow1.R
+import android.content.Intent
+import android.os.Handler
+import android.os.Looper
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -41,7 +44,10 @@ class RegisterActivity : AppCompatActivity() {
 
             Toast.makeText(this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show()
 
-            finish()
+            Handler(Looper.getMainLooper()).postDelayed({
+                startActivity(Intent(this, LoginActivity::class.java))
+                finish()
+            }, 2000)
         }
     }
 }

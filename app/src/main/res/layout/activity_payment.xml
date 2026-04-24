@@ -11,62 +11,82 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Título -->
+
         <TextView
-            android:text="Confirmar Pago"
+            android:text="@string/confirmar_pago"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#023E8A"/>
+            android:textColor="#023E8A"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-        <!-- Resumen -->
+
         <LinearLayout
             android:layout_marginTop="16dp"
             android:padding="16dp"
             android:background="@drawable/card_bg"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <TextView
-                android:text="Resumen"
-                android:textStyle="bold"/>
+                android:text="@string/resumen"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
             <TextView
                 android:id="@+id/tvParking"
-                android:text="Parqueadero: Centro"/>
+                android:text="@string/parqueadero_centro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
             <TextView
                 android:id="@+id/tvDuration"
-                android:text="Duración: 2 horas"/>
+                android:text="@string/duraci_n_2_horas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
             <TextView
                 android:id="@+id/tvPrice"
-                android:text="Tarifa: $4/hora"/>
+                android:text="@string/tarifa_4_hora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
             <TextView
                 android:id="@+id/tvTotal"
-                android:text="Total: $8.00"
+                android:text="@string/total_8_00"
                 android:textStyle="bold"
-                android:textColor="#0077B6"/>
+                android:textColor="#0077B6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
 
-        <!-- Método de pago -->
+
         <LinearLayout
             android:layout_marginTop="16dp"
             android:padding="16dp"
             android:background="@drawable/card_bg"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <TextView
-                android:text="Método de Pago"
-                android:textStyle="bold"/>
+                android:text="@string/m_todo_de_pago"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
             <TextView
-                android:text="**** 4532"/>
+                android:text="@string/_4532"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
 
-        <!-- Botón pagar -->
+
         <Button
             android:id="@+id/btnPay"
-            android:text="Pagar $8.00"
+            android:text="@string/pagar_8_00"
             android:layout_marginTop="24dp"
             android:background="#00C853"
             android:textColor="#FFFFFF"

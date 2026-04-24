@@ -21,7 +21,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Bienvenida"
+                android:text="@string/bienvenida"
                 android:background="@color/azul_medio"
                 android:textColor="@color/blanco"
                 android:padding="12dp"
@@ -38,7 +38,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="¡Bienvenido a ParkNow!"
+                    android:text="@string/bienvenido_a_parknow"
                     android:textStyle="bold"
                     android:textColor="@color/azul_medio"
                     android:layout_marginBottom="16dp"/>
@@ -54,7 +54,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Encuentra espacios fácilmente"/>
+                        android:text="@string/encuentra_espacios_f_cilmente"/>
                 </LinearLayout>
 
                 <!-- ITEM 2 -->
@@ -68,7 +68,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Reserva en tiempo real"/>
+                        android:text="@string/reserva_en_tiempo_real"/>
                 </LinearLayout>
 
                 <!-- ITEM 3 -->
@@ -82,7 +82,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pago digital seguro"/>
+                        android:text="@string/pago_digital_seguro"/>
                 </LinearLayout>
 
                 <!-- BOTÓN -->
@@ -90,7 +90,7 @@
                     android:id="@+id/btnComenzar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Comenzar"
+                    android:text="@string/comenzar"
                     android:textColor="@color/blanco"
                     android:background="@drawable/button_bg"/>
 

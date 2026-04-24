@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.parknow.ui.parking.ParkingDetailActivity
+import com.example.parknow1.ui.user.parking.ParkingDetailActivity
 import com.example.parknow1.R
 
 class MapActivity : AppCompatActivity() {

@@ -11,28 +11,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- TITULO -->
+
         <TextView
-            android:text="Nueva Reserva"
+            android:text="@string/nueva_reserva"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="@color/text_primary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <!-- CARD PRINCIPAL -->
+
         <LinearLayout
             android:layout_marginTop="16dp"
             android:padding="18dp"
-            android:background="@drawable/bg_card"
+            android:background="@drawable/card_bg2"
             android:elevation="6dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- PARQUEADERO -->
+
             <TextView
-                android:text="Parqueadero"
+                android:text="@string/parqueadero"
                 android:textStyle="bold"
                 android:textColor="@color/text_secondary"
                 android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <!-- FECHA -->
+
             <EditText
                 android:id="@+id/etDate"
                 android:hint="@string/fecha_dd_mm_yyyy"
@@ -57,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <!-- HORA -->
+
             <EditText
                 android:id="@+id/etTime"
                 android:hint="@string/hora_hh_mm"
@@ -67,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <!-- DURACION -->
+
             <Spinner
                 android:id="@+id/spDuration"
                 android:layout_marginTop="12dp"
@@ -76,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <!-- SUBTOTAL -->
+
             <TextView
                 android:id="@+id/tvSubtotal"
                 android:text="@string/subtotal_0_0"
@@ -87,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <!-- BOTON -->
+
             <Button
                 android:id="@+id/btnContinue"
                 android:text="@string/continuar"

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.parknow1.R
+import com.example.parknow1.ui.admin.AdminActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -35,6 +36,9 @@ class LoginActivity : AppCompatActivity() {
 
             // 🔥 LOGIN SIMULADO
             Toast.makeText(this, "Login exitoso", Toast.LENGTH_SHORT).show()
+
+            startActivity(Intent(this, AdminActivity::class.java))
+            finish()
         }
 
         // IR A REGISTRO

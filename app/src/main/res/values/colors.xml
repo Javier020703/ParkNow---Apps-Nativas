@@ -17,4 +17,17 @@
     <color name="celeste">#90E0EF</color>
     <color name="blanco">#FFFFFF</color>
     <color name="gris_fondo">#F5F5F5</color>
+
+
+
+    <color name="primary1">#0077B6</color>
+    <color name="primary_dark">#023E8A</color>
+    <color name="on_primary">#FFFFFF</color>
+
+    <color name="background1">#F5F5F5</color>
+    <color name="surface">#FFFFFF</color>
+
+    <color name="text_primary1">#1A1A1A</color>
+
+
 </resources>

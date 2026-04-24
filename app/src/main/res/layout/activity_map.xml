@@ -2,14 +2,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Fondo -->
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/map_placeholder" />
 
-    <!-- Pin principal -->
+
     <ImageView
         android:id="@+id/pinMain"
         android:src="@android:drawable/ic_menu_mylocation"
@@ -17,7 +17,7 @@
         android:layout_height="48dp"
         android:layout_gravity="center"/>
 
-    <!-- Pin 1 -->
+
     <ImageView
         android:id="@+id/pin1"
         android:src="@android:drawable/ic_menu_mylocation"
@@ -26,7 +26,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="200dp"/>
 
-    <!-- Pin 2 -->
+
     <ImageView
         android:id="@+id/pin2"
         android:src="@android:drawable/ic_menu_mylocation"
@@ -35,7 +35,7 @@
         android:layout_marginStart="250dp"
         android:layout_marginTop="400dp"/>
 
-    <!-- Botón volver -->
+
     <TextView
         android:id="@+id/btnBack"
         android:text="Volver"
@@ -43,6 +43,8 @@
         android:background="@drawable/button_bg"
         android:padding="8dp"
         android:layout_margin="16dp"
-        android:layout_gravity="top|start"/>
+        android:layout_gravity="top|start"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"/>
 
 </FrameLayout>

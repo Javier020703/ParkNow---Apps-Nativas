@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.parknow1">
 
     <application
@@ -12,52 +11,45 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ParkNow1">
-        <activity
-            android:name=".ui.user.payment.PaymentActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.user.reservation.ReservationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.user.parking.ParkingDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.user.map.MapActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.user.home.HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.auth.RegisterActivity"
-            android:exported="false" />
-        <activity android:name=".ui.onboarding.WelcomeActivity" />
+
+
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.admin.AdminActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity> <!-- 🔹 RESERVAS -->
+
+        <activity android:name=".ui.onboarding.WelcomeActivity" />
+
+
+        <activity android:name=".ui.auth.LoginActivity" />
+        <activity android:name=".ui.auth.RegisterActivity" />
+
+
+        <activity android:name=".ui.user.home.HomeActivity" />
+        <activity android:name=".ui.user.map.MapActivity" />
+        <activity android:name=".ui.user.parking.ParkingDetailActivity" />
+        <activity android:name=".ui.user.reservation.ReservationActivity" />
+        <activity android:name=".ui.user.payment.PaymentActivity" />
+
+
+
+        <activity android:name=".ui.admin.AdminActivity" />
         <activity android:name=".ui.admin.reservations.FormReservaActivity" />
-        <activity android:name=".ui.admin.reservations.DetalleReservaActivity" /> <!-- 🔹 PARQUEADEROS -->
+        <activity android:name=".ui.admin.reservations.DetalleReservaActivity" />
         <activity android:name=".ui.admin.activities.FormParqueaderoActivity" />
-        <activity android:name=".ui.admin.activities.VerParqueaderoActivity" /> <!-- 🔹 USUARIOS -->
+        <activity android:name=".ui.admin.activities.VerParqueaderoActivity" />
         <activity android:name=".ui.admin.users.FormUsuarioActivity" />
-        <activity android:name=".ui.admin.users.DetalleUsuarioActivity" /> <!-- 🔹 TARIFAS -->
-        <activity android:name=".ui.admin.tarifas.FormTarifaActivity" /> <!-- 🔹 USER APP -->
-        <activity android:name=".ui.user.PruebaActivity" /> <!-- 🔹 MAIN (NO launcher) -->
+        <activity android:name=".ui.admin.users.DetalleUsuarioActivity" />
+        <activity android:name=".ui.admin.tarifas.FormTarifaActivity" />
+
+
         <activity android:name=".ui.MainActivity" />
+
     </application>
 
 </manifest>
