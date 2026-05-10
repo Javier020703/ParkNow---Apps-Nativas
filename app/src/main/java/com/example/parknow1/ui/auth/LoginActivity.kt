@@ -1,5 +1,7 @@
 package com.example.parknow1.ui.auth
 
+//validar
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
