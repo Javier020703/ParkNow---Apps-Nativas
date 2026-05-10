@@ -16,7 +16,14 @@ class WelcomeActivity : AppCompatActivity() {
         val btnComenzar = findViewById<Button>(R.id.btnComenzar)
 
         btnComenzar.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
+
+            startActivity(
+                Intent(this, LoginActivity::class.java)
+            )
+
+            finish()
+
         }
+
     }
 }

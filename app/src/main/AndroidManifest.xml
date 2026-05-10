@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.parknow1">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -12,52 +10,116 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ParkNow1">
-        <activity
-            android:name=".ui.user.payment.PaymentActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.user.reservation.ReservationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.user.parking.ParkingDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.user.map.MapActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.user.home.HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.auth.RegisterActivity"
-            android:exported="false" />
-        <activity android:name=".ui.onboarding.WelcomeActivity" />
+
+        <!-- ========================================================= -->
+        <!-- SPLASH -->
+        <!-- ========================================================= -->
+
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true">
+
+            <!-- Pantalla inicial de la app -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity
-            android:name=".ui.admin.AdminActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity> <!-- 🔹 RESERVAS -->
-        <activity android:name=".ui.admin.reservations.FormReservaActivity" />
-        <activity android:name=".ui.admin.reservations.DetalleReservaActivity" /> <!-- 🔹 PARQUEADEROS -->
-        <activity android:name=".ui.admin.activities.FormParqueaderoActivity" />
-        <activity android:name=".ui.admin.activities.VerParqueaderoActivity" /> <!-- 🔹 USUARIOS -->
-        <activity android:name=".ui.admin.users.FormUsuarioActivity" />
-        <activity android:name=".ui.admin.users.DetalleUsuarioActivity" /> <!-- 🔹 TARIFAS -->
-        <activity android:name=".ui.admin.tarifas.FormTarifaActivity" /> <!-- 🔹 USER APP -->
-        <activity android:name=".ui.user.PruebaActivity" /> <!-- 🔹 MAIN (NO launcher) -->
-        <activity android:name=".ui.MainActivity" />
+
+        <!-- ========================================================= -->
+        <!-- ONBOARDING -->
+        <!-- ========================================================= -->
+
+        <activity
+            android:name=".ui.onboarding.WelcomeActivity"
+            android:exported="false" />
+
+
+        <!-- ========================================================= -->
+        <!-- AUTH -->
+        <!-- ========================================================= -->
+
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.auth.RegisterActivity"
+            android:exported="false" />
+
+
+        <!-- ========================================================= -->
+        <!-- USER MODULE -->
+        <!-- ========================================================= -->
+
+        <!-- Home principal del usuario -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false" />
+
+
+        <!-- ========================================================= -->
+        <!-- ADMIN MODULE (DESHABILITADO TEMPORALMENTE) -->
+        <!-- ========================================================= -->
+
+        <activity
+            android:name=".ui.admin_disabled.AdminActivity"
+            android:exported="false" />
+
+
+
+        <!-- ========================================================= -->
+        <!-- ADMIN - RESERVAS -->
+        <!-- ========================================================= -->
+
+        <activity
+            android:name=".ui.admin_disabled.reservations.FormReservaActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.admin_disabled.reservations.DetalleReservaActivity"
+            android:exported="false" />
+
+
+
+        <!-- ========================================================= -->
+        <!-- ADMIN - PARQUEADEROS -->
+        <!-- ========================================================= -->
+
+        <activity
+            android:name=".ui.admin_disabled.activities.FormParqueaderoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.admin_disabled.activities.VerParqueaderoActivity"
+            android:exported="false" />
+
+
+
+        <!-- ========================================================= -->
+        <!-- ADMIN - USUARIOS -->
+        <!-- ========================================================= -->
+
+        <activity
+            android:name=".ui.admin_disabled.users.FormUsuarioActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.admin_disabled.users.DetalleUsuarioActivity"
+            android:exported="false" />
+
+
+
+        <!-- ========================================================= -->
+        <!-- ADMIN - TARIFAS -->
+        <!-- ========================================================= -->
+
+        <activity
+            android:name=".ui.admin_disabled.tarifas.FormTarifaActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

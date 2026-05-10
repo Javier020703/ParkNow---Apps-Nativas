@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:padding="20dp"
+    android:background="@color/azul_oscuro">
+
+    <!-- LOGO -->
+    <TextView
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@drawable/bg_logo_splash"
+        android:gravity="center"
+        android:text="P"
+        android:textColor="@color/blanco"
+        android:textStyle="bold"
+        android:textSize="26sp"/>
+
+    <!-- NOMBRE APP -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ParkNow"
+        android:textColor="@color/blanco"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:layout_marginTop="14dp"/>
+
+    <!-- SUBTÍTULO -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smart Parking"
+        android:textColor="@color/celeste"
+        android:textSize="14sp"/>
+
+</LinearLayout>

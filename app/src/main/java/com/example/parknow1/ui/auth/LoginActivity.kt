@@ -2,44 +2,175 @@ package com.example.parknow1.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.credentials.CredentialManager
+import androidx.credentials.GetCredentialRequest
+import androidx.lifecycle.lifecycleScope
 import com.example.parknow1.R
+import com.example.parknow1.ui.MainActivity
+import com.example.parknow1.data.remote.SupabaseClient
+import com.google.android.libraries.identity.googleid.GetGoogleIdOption
+import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
+import io.github.jan.supabase.auth.auth
+import io.github.jan.supabase.auth.providers.Google
+import io.github.jan.supabase.auth.providers.builtin.Email
+import io.github.jan.supabase.auth.providers.builtin.IDToken
+import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
+
+    private lateinit var etEmail: EditText
+    private lateinit var etPassword: EditText
+    private lateinit var btnLogin: Button
+    private lateinit var btnGoogle: LinearLayout
+    private lateinit var txtRegister: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val email = findViewById<EditText>(R.id.etEmail)
-        val password = findViewById<EditText>(R.id.etPassword)
-        val btnLogin = findViewById<Button>(R.id.btnLogin)
-        val txtRegister = findViewById<TextView>(R.id.txtRegister)
+        // Inputs
+        etEmail = findViewById(R.id.etEmail)
+        etPassword = findViewById(R.id.etPassword)
 
-        // BOTÓN LOGIN
+        // Botones
+        btnLogin = findViewById(R.id.btnLogin)
+        btnGoogle = findViewById(R.id.btnGoogleLogin)
+
+        // Textos
+        txtRegister = findViewById(R.id.txtRegister)
+
+        // Login email
         btnLogin.setOnClickListener {
-
-            val emailText = email.text.toString()
-            val passText = password.text.toString()
-
-            if (emailText.isEmpty()) {
-                email.error = "Ingrese su correo"
-                return@setOnClickListener
-            }
-
-            if (passText.isEmpty()) {
-                password.error = "Ingrese su contraseña"
-                return@setOnClickListener
-            }
-
-            // 🔥 LOGIN SIMULADO
-            Toast.makeText(this, "Login exitoso", Toast.LENGTH_SHORT).show()
+            loginEmail()
         }
 
-        // IR A REGISTRO
+        // Login Google
+        btnGoogle.setOnClickListener {
+            iniciarSesionConGoogle()
+        }
+
+        // Ir a Register
         txtRegister.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, RegistroActivity::class.java))
         }
+    }
+
+    // ---------------- LOGIN EMAIL ----------------
+
+    private fun loginEmail() {
+
+        val correo = etEmail.text.toString().trim()
+        val password = etPassword.text.toString().trim()
+
+        if (correo.isEmpty() || password.isEmpty()) {
+
+            Toast.makeText(
+                this,
+                "Completa todos los campos",
+                Toast.LENGTH_SHORT
+            ).show()
+
+            return
+        }
+
+        lifecycleScope.launch {
+
+            try {
+
+                SupabaseClient.client.auth.signInWith(Email) {
+
+                    email = correo
+                    this.password = password
+                }
+
+                Toast.makeText(
+                    this@LoginActivity,
+                    "Inicio de sesión exitoso",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                irMain()
+
+            } catch (e: Exception) {
+
+                Toast.makeText(
+                    this@LoginActivity,
+                    "Error: ${e.message}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
+    }
+
+    // ---------------- LOGIN GOOGLE ----------------
+
+    private fun iniciarSesionConGoogle() {
+
+        lifecycleScope.launch {
+
+            try {
+
+                val googleIdOption = GetGoogleIdOption.Builder()
+                    .setFilterByAuthorizedAccounts(false)
+                    .setServerClientId("655932911134-la3jl66v5o57mv1m0hek5e3d0snhrv3i.apps.googleusercontent.com")
+                    .build()
+
+                val request = GetCredentialRequest.Builder()
+                    .addCredentialOption(googleIdOption)
+                    .build()
+
+                val credentialManager = CredentialManager.create(this@LoginActivity)
+
+                val result = credentialManager.getCredential(
+                    this@LoginActivity,
+                    request
+                )
+
+                val credential = GoogleIdTokenCredential.createFrom(
+                    result.credential.data
+                )
+
+                // Login Supabase
+
+                SupabaseClient.client.auth.signInWith(IDToken) {
+
+                    idToken = credential.idToken
+                    provider = Google
+                }
+
+                Toast.makeText(
+                    this@LoginActivity,
+                    "Google Login exitoso",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                irMain()
+
+            } catch (e: Exception) {
+
+                Toast.makeText(
+                    this@LoginActivity,
+                    "Error Google: ${e.message}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
+    }
+
+    // ---------------- IR MAIN ----------------
+
+    private fun irMain() {
+
+        startActivity(
+            Intent(this, MainActivity::class.java)
+        )
+
+        finish()
     }
 }

@@ -2,12 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0077B6">
+    android:background="#FFFFFF">
 
-    <!-- Contenedor centrado -->
+    <!-- CONTENEDOR CENTRAL -->
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="wrap_content"
@@ -19,42 +18,58 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Caja -->
+        <!-- LOGO -->
         <FrameLayout
-            android:layout_width="110dp"
-            android:layout_height="110dp">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#0096C7"/>
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/bg_logo_splash"
+            android:elevation="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="P"
                 android:textColor="#FFFFFF"
-                android:textSize="42sp"
+                android:textSize="48sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"/>
+
         </FrameLayout>
 
-        <!-- Nombre -->
-        <TextView
+        <!-- TITULO -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ParkNow"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:layout_marginTop="20dp"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="24dp">
 
-        <!-- Subtítulo -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Park"
+                android:textColor="#023E8A"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Now"
+                android:textColor="#00B4D8"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <!-- SUBTITULO -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Smart Parking"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"/>
+            android:textColor="#0077B6"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginTop="6dp"/>
 
     </LinearLayout>
 

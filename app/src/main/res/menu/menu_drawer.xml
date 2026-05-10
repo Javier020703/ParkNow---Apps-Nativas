@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_inicio"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="Inicio"/>
+
+    <item
+        android:id="@+id/nav_reservas"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:title="Mis Reservas"/>
+
+    <item
+        android:id="@+id/nav_mapa"
+        android:icon="@android:drawable/ic_dialog_map"
+        android:title="Mapa"/>
+
+    <item
+        android:id="@+id/nav_perfil"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Perfil"/>
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@android:drawable/ic_lock_power_off"
+        android:title="Cerrar Sesión"/>
+
+</menu>

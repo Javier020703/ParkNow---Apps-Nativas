@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@color/blanco">
+
+    <!-- CÍRCULO VERDE -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:cardCornerRadius="60dp"
+        app:cardElevation="0dp"
+        android:backgroundTint="#DFF6E4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <!-- CHULO -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✓"
+                android:textSize="54sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- TITULO -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡Pago Exitoso!"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/azul_oscuro"
+        android:layout_marginTop="30dp"/>
+
+    <!-- MENSAJE -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tu reserva ha sido confirmada"
+        android:textSize="17sp"
+        android:textColor="#666666"
+        android:layout_marginTop="10dp"/>
+
+    <!-- CARD CÓDIGO -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="0dp"
+        android:backgroundTint="#F7F9FC"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Código de Reserva"
+                android:textSize="16sp"
+                android:textColor="#666666"/>
+
+            <TextView
+                android:id="@+id/txtCodigoReserva"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PKN-8542"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:textColor="@color/azul_medio"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- BOTÓN -->
+    <Button
+        android:id="@+id/btnVerReserva"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:text="Ver Mi Reserva"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/blanco"
+        android:backgroundTint="@color/azul_medio"/>
+
+</LinearLayout>
