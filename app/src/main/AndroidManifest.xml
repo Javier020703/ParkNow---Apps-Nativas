@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- PERMISOS -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+
+    <!-- Cámara opcional -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,114 +23,73 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ParkNow1">
 
-        <!-- ========================================================= -->
         <!-- SPLASH -->
-        <!-- ========================================================= -->
-
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true">
 
-            <!-- Pantalla inicial de la app -->
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
 
         </activity>
 
-
-        <!-- ========================================================= -->
         <!-- ONBOARDING -->
-        <!-- ========================================================= -->
-
         <activity
             android:name=".ui.onboarding.WelcomeActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
-
-        <!-- ========================================================= -->
         <!-- AUTH -->
-        <!-- ========================================================= -->
-
         <activity
             android:name=".ui.auth.LoginActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity
-            android:name=".ui.auth.RegisterActivity"
-            android:exported="false" />
+            android:name=".ui.auth.RegistroActivity"
+            android:exported="false"/>
 
-
-        <!-- ========================================================= -->
-        <!-- USER MODULE -->
-        <!-- ========================================================= -->
-
-        <!-- Home principal del usuario -->
+        <!-- MAIN -->
         <activity
             android:name=".ui.MainActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
-
-        <!-- ========================================================= -->
-        <!-- ADMIN MODULE (DESHABILITADO TEMPORALMENTE) -->
-        <!-- ========================================================= -->
-
+        <!-- ADMIN -->
         <activity
             android:name=".ui.admin_disabled.AdminActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
-
-
-        <!-- ========================================================= -->
-        <!-- ADMIN - RESERVAS -->
-        <!-- ========================================================= -->
-
+        <!-- RESERVAS -->
         <activity
             android:name=".ui.admin_disabled.reservations.FormReservaActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity
             android:name=".ui.admin_disabled.reservations.DetalleReservaActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
-
-
-        <!-- ========================================================= -->
-        <!-- ADMIN - PARQUEADEROS -->
-        <!-- ========================================================= -->
-
+        <!-- PARQUEADEROS -->
         <activity
             android:name=".ui.admin_disabled.activities.FormParqueaderoActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity
             android:name=".ui.admin_disabled.activities.VerParqueaderoActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
-
-
-        <!-- ========================================================= -->
-        <!-- ADMIN - USUARIOS -->
-        <!-- ========================================================= -->
-
+        <!-- USUARIOS -->
         <activity
             android:name=".ui.admin_disabled.users.FormUsuarioActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity
             android:name=".ui.admin_disabled.users.DetalleUsuarioActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
-
-
-        <!-- ========================================================= -->
-        <!-- ADMIN - TARIFAS -->
-        <!-- ========================================================= -->
-
+        <!-- TARIFAS -->
         <activity
             android:name=".ui.admin_disabled.tarifas.FormTarifaActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
     </application>
 

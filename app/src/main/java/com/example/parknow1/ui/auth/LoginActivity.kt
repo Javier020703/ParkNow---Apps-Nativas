@@ -118,7 +118,7 @@ class LoginActivity : AppCompatActivity() {
 
                 val googleIdOption = GetGoogleIdOption.Builder()
                     .setFilterByAuthorizedAccounts(false)
-                    .setServerClientId("655932911134-la3jl66v5o57mv1m0hek5e3d0snhrv3i.apps.googleusercontent.com")
+                    .setServerClientId("140427932406-94lt4tmv8qlqtl221o4ipmmd7jodluiq.apps.googleusercontent.com")
                     .build()
 
                 val request = GetCredentialRequest.Builder()
