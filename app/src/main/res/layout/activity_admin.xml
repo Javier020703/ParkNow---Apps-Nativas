@@ -7,49 +7,44 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
+
+    <!-- CONTENIDO -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/background">
+        android:orientation="vertical">
 
-        <!-- Toolbar -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/primary"
-            android:elevation="4dp"
+            android:background="#121212"
             android:title="@string/parknow"
-            android:titleTextColor="@color/on_primary"/>
+            android:titleTextColor="#FFFFFF"/>
 
-        <!-- Contenido -->
+
         <FrameLayout
             android:id="@+id/frameContainer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-        <!-- Bottom Navigation -->
+        <!-- BOTONES ABAJO -->
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/surface"
-            app:itemIconTint="@color/primary"
-            app:itemTextColor="@color/primary"
+            android:background="#FFFFFF"
             app:menu="@menu/bottom_menu"/>
 
     </LinearLayout>
 
-    <!-- Drawer -->
+    <!-- MENÚ -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/surface"
-        app:itemTextColor="@color/text_primary"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/drawer_menu"/>
 
