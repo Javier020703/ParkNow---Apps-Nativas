@@ -71,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
         val password = etPassword.text.toString().trim()
 
         if (correo.isEmpty() || password.isEmpty()) {
-
+    
             Toast.makeText(
                 this,
                 "Completa todos los campos",

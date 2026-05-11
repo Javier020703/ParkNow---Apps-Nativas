@@ -48,6 +48,7 @@
                     android:layout_height="wrap_content"/>
 
                 <EditText
+                    android:id="@+id/etNombre"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:hint="@string/nombre"
@@ -56,6 +57,7 @@
                     android:layout_marginTop="12dp"/>
 
                 <EditText
+                    android:id="@+id/etDireccion"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:hint="@string/direcci_n"
@@ -64,6 +66,7 @@
                     android:layout_marginTop="10dp"/>
 
                 <EditText
+                    android:id="@+id/etCupos"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:hint="@string/cantidad_de_espacios"
@@ -73,6 +76,7 @@
                     android:layout_marginTop="10dp"/>
 
                 <EditText
+                    android:id="@+id/etTarifa"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:hint="@string/tarifa_por_hora"
@@ -105,6 +109,7 @@
                     android:layout_height="wrap_content"/>
 
                 <Button
+                    android:id="@+id/btnGuardar"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:text="@string/crear_parqueadero"
