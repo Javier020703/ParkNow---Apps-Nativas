@@ -1,9 +1,12 @@
 package com.example.parknow1.ui.admin_disabled.users
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.parknow1.databinding.ActivityDetalleUsuarioBinding
+import com.example.parknow1.data.repository.UserRepository
+import kotlinx.coroutines.launch
+
 
 class DetalleUsuarioActivity : AppCompatActivity() {
 
@@ -15,18 +18,17 @@ class DetalleUsuarioActivity : AppCompatActivity() {
         binding = ActivityDetalleUsuarioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val nombre = intent.getStringExtra("nombre") ?: ""
-        val correo = intent.getStringExtra("correo") ?: ""
+        val id = intent.getStringExtra("id") ?: return
 
-        binding.tvNombre.text = nombre
-        binding.tvCorreo.text = correo
-        binding.tvInfo.text = "Usuario activo en sistema"
+        lifecycleScope.launch {
 
-        binding.btnEditar.setOnClickListener {
-            val intent = Intent(this, FormUsuarioActivity::class.java)
-            intent.putExtra("nombre", nombre)
-            intent.putExtra("correo", correo)
-            startActivity(intent)
+            val user = UserRepository.obtenerUsuarioPorId(id)
+
+            user?.let {
+                binding.tvNombre.text = it.nombres
+                binding.tvCorreo.text = it.correo
+                binding.tvInfo.text = it.rol
+            }
         }
     }
 }

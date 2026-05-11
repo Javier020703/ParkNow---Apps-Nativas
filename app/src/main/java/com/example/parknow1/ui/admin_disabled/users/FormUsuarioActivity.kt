@@ -3,39 +3,81 @@ package com.example.parknow1.ui.admin_disabled.users
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.parknow1.R
+import com.example.parknow1.data.model.User
+import com.example.parknow1.data.repository.UserRepository
+import kotlinx.coroutines.launch
+import java.util.UUID
 
 class FormUsuarioActivity : AppCompatActivity() {
 
+    private var userId: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_form_usuario)
 
-        // REFERENCIAS A LOS ELEMENTOS
         val etNombre = findViewById<EditText>(R.id.etNombre)
         val etCorreo = findViewById<EditText>(R.id.etCorreo)
         val btnGuardar = findViewById<Button>(R.id.btnGuardar)
 
-        // BOTÓN GUARDAR
+        userId = intent.getStringExtra("id")
+
+        if (userId != null) {
+            cargarUsuario(etNombre, etCorreo)
+        }
+
         btnGuardar.setOnClickListener {
 
-            val nombre = etNombre.text.toString().trim()
-            val correo = etCorreo.text.toString().trim()
+            val nombre = etNombre.text.toString()
+            val correo = etCorreo.text.toString()
 
-            if (nombre.isEmpty() || correo.isEmpty()) {
-                Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+            lifecycleScope.launch {
+
+                if (userId == null) {
+
+                    UserRepository.insertarUsuario(
+                        User(
+                            id = UUID.randomUUID().toString(),
+                            nombres = nombre,
+                            apellidos = "",
+                            correo = correo,
+                            telefono = "",
+                            rol = "cliente"
+                        )
+                    )
+
+                } else {
+
+                    UserRepository.actualizarUsuario(
+                        User(
+                            id = userId!!,
+                            nombres = nombre,
+                            apellidos = "",
+                            correo = correo,
+                            telefono = "",
+                            rol = "cliente"
+                        )
+                    )
+                }
+
+                finish()
             }
+        }
+    }
 
-            //  luego conectamos crud real
-            Toast.makeText(this, "Usuario guardado", Toast.LENGTH_SHORT).show()
+    private fun cargarUsuario(etNombre: EditText, etCorreo: EditText) {
 
-            // Limpiar campos
-            etNombre.setText("")
-            etCorreo.setText("")
+        lifecycleScope.launch {
+
+            val user = UserRepository.obtenerUsuarioPorId(userId!!)
+
+            user?.let {
+                etNombre.setText(it.nombres)
+                etCorreo.setText(it.correo)
+            }
         }
     }
 }

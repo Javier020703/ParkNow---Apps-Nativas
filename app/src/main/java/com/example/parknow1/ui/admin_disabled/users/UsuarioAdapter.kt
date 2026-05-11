@@ -5,8 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parknow1.databinding.ItemUsuarioBinding
+import com.example.parknow1.data.model.User
 
-class UsuarioAdapter : RecyclerView.Adapter<UsuarioAdapter.ViewHolder>() {
+class UsuarioAdapter(
+    private val lista: MutableList<User>,
+    private val onDelete: (User) -> Unit
+) : RecyclerView.Adapter<UsuarioAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemUsuarioBinding)
         : RecyclerView.ViewHolder(binding.root)
@@ -18,35 +22,33 @@ class UsuarioAdapter : RecyclerView.Adapter<UsuarioAdapter.ViewHolder>() {
         return ViewHolder(binding)
     }
 
-    override fun getItemCount() = UsuarioProvider.listaUsuarios.size
+    override fun getItemCount() = lista.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val user = UsuarioProvider.listaUsuarios[position]
+        val user = lista[position]
 
-        holder.binding.tvNombre.text = user.nombre
-        holder.binding.tvCorreo.text = user.correo
-        holder.binding.tvInfo.text =
-            "${user.reservas} reservas • $${user.gasto}"
+        holder.binding.tvNombre.text = user.nombres
+        holder.binding.tvCorreo.text = user.correo ?: ""
+        holder.binding.tvInfo.text = user.rol
 
         // VER
         holder.binding.btnVer.setOnClickListener {
             val intent = Intent(holder.itemView.context, DetalleUsuarioActivity::class.java)
-            intent.putExtra("pos", position)
+            intent.putExtra("id", user.id)
             holder.itemView.context.startActivity(intent)
         }
 
         // EDITAR
         holder.binding.btnEditar.setOnClickListener {
             val intent = Intent(holder.itemView.context, FormUsuarioActivity::class.java)
-            intent.putExtra("pos", position)
+            intent.putExtra("id", user.id)
             holder.itemView.context.startActivity(intent)
         }
 
         // ELIMINAR
         holder.binding.btnEliminar.setOnClickListener {
-            UsuarioProvider.listaUsuarios.removeAt(position)
-            notifyDataSetChanged()
+            onDelete(user)
         }
     }
 }

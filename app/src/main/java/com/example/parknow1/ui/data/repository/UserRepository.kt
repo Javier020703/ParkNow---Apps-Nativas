@@ -3,44 +3,40 @@ package com.example.parknow1.data.repository
 import android.content.Context
 import android.net.Uri
 import android.util.Log
-
 import com.example.parknow1.data.model.User
 import com.example.parknow1.data.remote.SupabaseClient
-
 import io.github.jan.supabase.auth.auth
 import io.github.jan.supabase.postgrest.postgrest
 import io.github.jan.supabase.postgrest.query.Columns
 import io.github.jan.supabase.storage.storage
-
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
+import java.io.File
 
 object UserRepository {
 
-    // Verificar si existe usuario
-    suspend fun existeUsuario(userId: String): Boolean {
+    // EXISTE USUARIO
 
+    suspend fun existeUsuario(userId: String): Boolean {
         return try {
 
             val resultado = SupabaseClient.client
                 .postgrest["usuarios"]
                 .select(Columns.raw("id")) {
-
-                    filter {
-                        eq("id", userId)
-                    }
+                    filter { eq("id", userId) }
                 }
                 .decodeList<Map<String, String>>()
 
             resultado.isNotEmpty()
 
         } catch (e: Exception) {
-
             false
         }
     }
 
-    // Insertar usuario
+
+    // INSERTAR USUARIO (legacy)
+
     suspend fun insertarUsuario(
         id: String,
         nombres: String,
@@ -53,7 +49,6 @@ object UserRepository {
         SupabaseClient.client
             .postgrest["usuarios"]
             .insert(
-
                 User(
                     id = id,
                     nombres = nombres,
@@ -65,65 +60,55 @@ object UserRepository {
             )
     }
 
-    // Obtener usuario actual
+    // OBTENER USUARIO LOGUEADO
+
     suspend fun obtenerUsuario(): User? {
 
         val userId =
-            SupabaseClient.client.auth.currentUserOrNull()?.id
-                ?: return null
+            SupabaseClient.client.auth.currentUserOrNull()?.id ?: return null
 
         return try {
 
-            val resultado = SupabaseClient.client
+            SupabaseClient.client
                 .postgrest["usuarios"]
                 .select {
-
-                    filter {
-                        eq("id", userId)
-                    }
+                    filter { eq("id", userId) }
                 }
                 .decodeList<User>()
-
-            Log.d("DEBUG_USER", "Usuario: $resultado")
-
-            resultado.firstOrNull()
+                .firstOrNull()
 
         } catch (e: Exception) {
 
             Log.e("DEBUG_USER", "Error: ${e.message}")
-
             null
         }
     }
 
-    // Obtener rol actual
+    // OBTENER ROL
+
     suspend fun obtenerRolActual(): String {
+
+        val userId =
+            SupabaseClient.client.auth.currentUserOrNull()?.id ?: return "cliente"
 
         return try {
 
-            val userId =
-                SupabaseClient.client.auth.currentUserOrNull()?.id
-                    ?: return "cliente"
-
-            val resultado = SupabaseClient.client
+            SupabaseClient.client
                 .postgrest["usuarios"]
                 .select {
-
-                    filter {
-                        eq("id", userId)
-                    }
+                    filter { eq("id", userId) }
                 }
                 .decodeList<User>()
-
-            resultado.firstOrNull()?.rol ?: "cliente"
+                .firstOrNull()
+                ?.rol ?: "cliente"
 
         } catch (e: Exception) {
-
             "cliente"
         }
     }
 
-    // Actualizar perfil
+    // ACTUALIZAR PERFIL PROPIO
+
     suspend fun actualizarPerfil(
         nombres: String,
         apellidos: String,
@@ -132,8 +117,7 @@ object UserRepository {
     ) {
 
         val userId =
-            SupabaseClient.client.auth.currentUserOrNull()?.id
-                ?: return
+            SupabaseClient.client.auth.currentUserOrNull()?.id ?: return
 
         val datos = buildJsonObject {
 
@@ -149,59 +133,93 @@ object UserRepository {
         SupabaseClient.client
             .postgrest["usuarios"]
             .update(datos) {
-
-                filter {
-                    eq("id", userId)
-                }
+                filter { eq("id", userId) }
             }
     }
 
-    // Subir foto perfil
+    // SUBIR FOTO PERFIL
+
     suspend fun subirFotoPerfil(
         contexto: Context,
         uri: Uri
     ): String {
 
         val userId =
-            SupabaseClient.client.auth.currentUserOrNull()?.id
-                ?: return ""
+            SupabaseClient.client.auth.currentUserOrNull()?.id ?: return ""
 
         return try {
 
             val bytes = if (uri.scheme == "content") {
-
-                contexto.contentResolver
-                    .openInputStream(uri)
-                    ?.readBytes()
-
+                contexto.contentResolver.openInputStream(uri)?.readBytes()
             } else {
-
-                java.io.File(uri.path!!).readBytes()
+                File(uri.path!!).readBytes()
             } ?: return ""
 
             val rutaArchivo = "perfil_$userId.jpg"
 
-            // Subir a storage
             SupabaseClient.client
                 .storage["avatars"]
-                .upload(
-                    path = rutaArchivo,
-                    data = bytes
-                ) {
-
+                .upload(path = rutaArchivo, data = bytes) {
                     upsert = true
                 }
 
-            // Obtener URL pública
             SupabaseClient.client
                 .storage["avatars"]
                 .publicUrl(rutaArchivo)
 
         } catch (e: Exception) {
-
             Log.e("DEBUG_FOTO", "Error: ${e.message}")
-
             ""
         }
+    }
+
+    // CRUD ADMIN (USUARIOS)
+
+    suspend fun obtenerUsuarios(): List<User> {
+        return SupabaseClient.client
+            .postgrest["usuarios"]
+            .select()
+            .decodeList()
+    }
+
+    suspend fun obtenerUsuarioPorId(id: String): User? {
+        return SupabaseClient.client
+            .postgrest["usuarios"]
+            .select {
+                filter { eq("id", id) }
+            }
+            .decodeList<User>()
+            .firstOrNull()
+    }
+
+    suspend fun insertarUsuario(user: User) {
+        SupabaseClient.client
+            .postgrest["usuarios"]
+            .insert(user)
+    }
+
+    suspend fun actualizarUsuario(user: User) {
+
+        val datos = buildJsonObject {
+            put("nombres", user.nombres)
+            put("apellidos", user.apellidos)
+            put("correo", user.correo)
+            put("telefono", user.telefono)
+            put("rol", user.rol)
+        }
+
+        SupabaseClient.client
+            .postgrest["usuarios"]
+            .update(datos) {
+                filter { eq("id", user.id) }
+            }
+    }
+
+    suspend fun eliminarUsuario(id: String) {
+        SupabaseClient.client
+            .postgrest["usuarios"]
+            .delete {
+                filter { eq("id", id) }
+            }
     }
 }
