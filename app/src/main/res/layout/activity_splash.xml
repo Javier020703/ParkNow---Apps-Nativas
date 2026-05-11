@@ -28,7 +28,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="P"
+                android:text="@string/p"
                 android:textColor="#FFFFFF"
                 android:textSize="48sp"
                 android:textStyle="bold"
@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Park"
+                android:text="@string/park"
                 android:textColor="#023E8A"
                 android:textSize="30sp"
                 android:textStyle="bold"/>
@@ -54,7 +54,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Now"
+                android:text="@string/now"
                 android:textColor="#00B4D8"
                 android:textSize="30sp"
                 android:textStyle="bold"/>
@@ -65,7 +65,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Smart Parking"
+            android:text="@string/smart_parking"
             android:textColor="#0077B6"
             android:textSize="15sp"
             android:textStyle="bold"

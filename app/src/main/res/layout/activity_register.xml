@@ -23,7 +23,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="P"
+                android:text="@string/p"
                 android:textColor="#FFFFFF"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Crear Cuenta"
+            android:text="@string/crear_cuenta"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="#023E8A"
@@ -62,7 +62,7 @@
                 android:id="@+id/etNombres"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombres"
+                android:hint="@string/nombres"
                 android:background="@android:color/transparent"
                 android:paddingStart="10dp"/>
         </LinearLayout>
@@ -88,7 +88,7 @@
                 android:id="@+id/etApellidos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Apellidos"
+                android:hint="@string/apellidos"
                 android:background="@android:color/transparent"
                 android:paddingStart="10dp"/>
         </LinearLayout>
@@ -114,7 +114,7 @@
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Correo electrónico"
+                android:hint="@string/correo_electr_nico"
                 android:background="@android:color/transparent"
                 android:inputType="textEmailAddress"
                 android:paddingStart="10dp"/>
@@ -141,7 +141,7 @@
                 android:id="@+id/etTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Teléfono"
+                android:hint="@string/tel_fono"
                 android:background="@android:color/transparent"
                 android:inputType="phone"
                 android:paddingStart="10dp"/>
@@ -168,7 +168,7 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Contraseña"
+                android:hint="@string/contrase_a"
                 android:background="@android:color/transparent"
                 android:inputType="textPassword"
                 android:paddingStart="10dp"/>
@@ -195,7 +195,7 @@
                 android:id="@+id/etConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Confirmar contraseña"
+                android:hint="@string/confirmar_contrase_a"
                 android:background="@android:color/transparent"
                 android:inputType="textPassword"
                 android:paddingStart="10dp"/>
@@ -206,7 +206,7 @@
             android:id="@+id/checkTerminos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Acepto términos y condiciones"
+            android:text="@string/acepto_t_rminos_y_condiciones"
             android:textColor="#555555"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
@@ -217,7 +217,7 @@
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:text="Registrarse"
+            android:text="@string/registrarse"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:textSize="16sp"
@@ -233,7 +233,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Ya tienes cuenta? "
+                android:text="@string/ya_tienes_cuenta"
                 android:textColor="#777777"
                 android:textSize="15sp"/>
 
@@ -241,7 +241,7 @@
                 android:id="@+id/txtIrLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Inicia sesión"
+                android:text="@string/inicia_sesi_n"
                 android:textColor="#00B4D8"
                 android:textStyle="bold"
                 android:textSize="15sp"/>

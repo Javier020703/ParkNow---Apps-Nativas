@@ -31,7 +31,7 @@
                 android:background="@android:color/transparent"
                 android:src="@android:drawable/ic_menu_sort_by_size"
                 app:tint="@color/blanco"
-                android:contentDescription="Abrir menú"/>
+                android:contentDescription="@string/abrir_men"/>
 
             <!-- LOGO -->
             <LinearLayout
@@ -47,7 +47,7 @@
                     android:layout_height="42dp"
                     android:background="@drawable/bg_logo_splash"
                     android:gravity="center"
-                    android:text="P"
+                    android:text="@string/p"
                     android:textColor="@color/blanco"
                     android:textStyle="bold"
                     android:textSize="20sp"/>
@@ -57,7 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="ParkNow"
+                    android:text="@string/parknow"
                     android:textColor="@color/blanco"
                     android:textStyle="bold"
                     android:textSize="20sp"/>

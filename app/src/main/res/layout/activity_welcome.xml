@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¡Bienvenido a ParkNow!"
+            android:text="@string/bienvenido_a_parknow"
             android:textColor="#023E8A"
             android:textSize="28sp"
             android:textStyle="bold"
@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Encuentra, reserva y paga tu parqueadero fácilmente"
+            android:text="@string/encuentra_reserva_y_paga_tu_parqueadero_f_cilmente"
             android:textColor="#0077B6"
             android:textSize="16sp"
             android:gravity="center"
@@ -56,7 +56,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Encuentra espacios fácilmente"
+                android:text="@string/encuentra_espacios_f_cilmente"
                 android:textStyle="bold"
                 android:textColor="#023E8A"
                 android:textSize="18sp"
@@ -65,7 +65,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ubica parqueaderos cercanos en segundos"
+                android:text="@string/ubica_parqueaderos_cercanos_en_segundos"
                 android:textAlignment="center"
                 android:gravity="center"
                 android:layout_marginTop="6dp"/>
@@ -91,7 +91,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Reserva en tiempo real"
+                android:text="@string/reserva_en_tiempo_real"
                 android:textStyle="bold"
                 android:textColor="#023E8A"
                 android:textSize="18sp"
@@ -100,7 +100,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Asegura tu cupo antes de llegar"
+                android:text="@string/asegura_tu_cupo_antes_de_llegar"
                 android:textAlignment="center"
                 android:gravity="center"
                 android:layout_marginTop="6dp"/>
@@ -126,7 +126,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pago digital seguro"
+                android:text="@string/pago_digital_seguro"
                 android:textStyle="bold"
                 android:textColor="#023E8A"
                 android:textSize="18sp"
@@ -135,7 +135,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Paga desde tu celular de forma rápida"
+                android:text="@string/paga_desde_tu_celular_de_forma_r_pida"
                 android:textAlignment="center"
                 android:gravity="center"
                 android:layout_marginTop="6dp"/>
@@ -146,7 +146,7 @@
             android:id="@+id/btnComenzar"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:text="Comenzar"
+            android:text="@string/comenzar"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:textStyle="bold"

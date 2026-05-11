@@ -45,20 +45,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-                <EditText
-                    android:id="@+id/etCliente"
+                <Spinner
+                    android:id="@+id/spUsuarios"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:hint="@string/nombre_del_cliente"
                     android:background="@drawable/bg_input"
                     android:padding="12dp"
                     android:layout_marginTop="12dp" />
 
-                <EditText
-                    android:id="@+id/etParqueadero"
+                <Spinner
+                    android:id="@+id/spParqueaderos"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:hint="@string/parqueadero"
                     android:background="@drawable/bg_input"
                     android:padding="12dp"
                     android:layout_marginTop="10dp" />

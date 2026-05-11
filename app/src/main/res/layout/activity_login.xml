@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="P"
+                android:text="@string/p"
                 android:textColor="#FFFFFF"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -33,7 +33,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Iniciar Sesión"
+            android:text="@string/iniciar_sesi_n"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="#023E8A"
@@ -69,7 +69,7 @@
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Correo electrónico"
+                android:hint="@string/correo_electr_nico"
                 android:background="@android:color/transparent"
                 android:inputType="textEmailAddress"
                 android:paddingStart="10dp"/>
@@ -95,7 +95,7 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Contraseña"
+                android:hint="@string/contrase_a"
                 android:background="@android:color/transparent"
                 android:inputType="textPassword"
                 android:paddingStart="10dp"/>
@@ -106,7 +106,7 @@
             android:id="@+id/txtForgot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¿Olvidaste tu contraseña?"
+            android:text="@string/olvidaste_tu_contrase_a"
             android:textColor="#0077B6"
             android:textSize="14sp"
             android:layout_gravity="end"
@@ -118,7 +118,7 @@
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:text="Ingresar"
+            android:text="@string/ingresar"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:textSize="16sp"
@@ -142,7 +142,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="  o continúa con  "
+                android:text="@string/o_contin_a_con"
                 android:textColor="#888888"
                 android:textSize="13sp"/>
 
@@ -174,7 +174,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ingresar con Google"
+                android:text="@string/ingresar_con_google"
                 android:textColor="#222222"
                 android:textStyle="bold"
                 android:textSize="15sp"
@@ -192,14 +192,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿No tienes cuenta? "
+                android:text="@string/no_tienes_cuenta"
                 android:textColor="#777777"/>
 
             <TextView
                 android:id="@+id/txtRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Regístrate"
+                android:text="@string/reg_strate"
                 android:textStyle="bold"
                 android:textColor="#00B4D8"/>
         </LinearLayout>
