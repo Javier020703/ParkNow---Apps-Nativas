@@ -46,7 +46,8 @@ object UserRepository {
         nombres: String,
         apellidos: String,
         correo: String,
-        telefono: String
+        telefono: String,
+        rol: String = "cliente"
     ) {
 
         SupabaseClient.client
@@ -58,7 +59,8 @@ object UserRepository {
                     nombres = nombres,
                     apellidos = apellidos,
                     correo = correo,
-                    telefono = telefono
+                    telefono = telefono,
+                    rol = rol
                 )
             )
     }

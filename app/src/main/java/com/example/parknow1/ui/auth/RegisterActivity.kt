@@ -150,7 +150,8 @@ class RegistroActivity : AppCompatActivity() {
                     nombres = nombres,
                     apellidos = apellidos,
                     correo = correo,
-                    telefono = telefono
+                    telefono = telefono,
+                    rol = "cliente"
                 )
 
                 runOnUiThread {

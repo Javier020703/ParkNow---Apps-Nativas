@@ -21,6 +21,8 @@ import io.github.jan.supabase.auth.providers.Google
 import io.github.jan.supabase.auth.providers.builtin.Email
 import io.github.jan.supabase.auth.providers.builtin.IDToken
 import kotlinx.coroutines.launch
+import com.example.parknow1.data.repository.UserRepository
+import com.example.parknow1.ui.admin_disabled.AdminActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -95,7 +97,7 @@ class LoginActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
 
-                irMain()
+                verificarRolYRedirigir()
 
             } catch (e: Exception) {
 
@@ -150,7 +152,7 @@ class LoginActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
 
-                irMain()
+                verificarRolYRedirigir()
 
             } catch (e: Exception) {
 
@@ -163,14 +165,46 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    // ---------------- IR MAIN ----------------
+    // ---- Funcion de revision de rol ---
+    private fun verificarRolYRedirigir() {
 
-    private fun irMain() {
+        lifecycleScope.launch {
 
-        startActivity(
-            Intent(this, MainActivity::class.java)
-        )
+            try {
 
-        finish()
+                val rol =
+                    UserRepository.obtenerRolActual()
+
+                if (rol == "admin") {
+
+                    startActivity(
+                        Intent(
+                            this@LoginActivity,
+                            AdminActivity::class.java
+                        )
+                    )
+
+                } else {
+
+                    startActivity(
+                        Intent(
+                            this@LoginActivity,
+                            MainActivity::class.java
+                        )
+                    )
+                }
+
+                finish()
+
+            } catch (e: Exception) {
+
+                Toast.makeText(
+                    this@LoginActivity,
+                    "Error obteniendo rol",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
     }
+
 }
