@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 
-class RegistroActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
     private lateinit var etNombres: EditText
     private lateinit var etApellidos: EditText
@@ -157,14 +157,14 @@ class RegistroActivity : AppCompatActivity() {
                 runOnUiThread {
 
                     Toast.makeText(
-                        this@RegistroActivity,
+                        this@RegisterActivity,
                         "Registro exitoso",
                         Toast.LENGTH_SHORT
                     ).show()
 
                     startActivity(
                         Intent(
-                            this@RegistroActivity,
+                            this@RegisterActivity,
                             LoginActivity::class.java
                         )
                     )
@@ -177,7 +177,7 @@ class RegistroActivity : AppCompatActivity() {
                 runOnUiThread {
 
                     Toast.makeText(
-                        this@RegistroActivity,
+                        this@RegisterActivity,
                         "Error: ${e.message}",
                         Toast.LENGTH_LONG
                     ).show()

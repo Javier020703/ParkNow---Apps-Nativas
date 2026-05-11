@@ -59,7 +59,7 @@ class LoginActivity : AppCompatActivity() {
 
         // Ir a Register
         txtRegister.setOnClickListener {
-            startActivity(Intent(this, RegistroActivity::class.java))
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
 
@@ -127,7 +127,8 @@ class LoginActivity : AppCompatActivity() {
                     .addCredentialOption(googleIdOption)
                     .build()
 
-                val credentialManager = CredentialManager.create(this@LoginActivity)
+                val credentialManager =
+                    CredentialManager.create(this@LoginActivity)
 
                 val result = credentialManager.getCredential(
                     this@LoginActivity,
@@ -138,12 +139,53 @@ class LoginActivity : AppCompatActivity() {
                     result.credential.data
                 )
 
-                // Login Supabase
-
+                // LOGIN SUPABASE
                 SupabaseClient.client.auth.signInWith(IDToken) {
 
                     idToken = credential.idToken
                     provider = Google
+                }
+
+                // OBTENER USUARIO
+                val user =
+                    SupabaseClient.client.auth.currentUserOrNull()
+
+                if (user != null) {
+
+                    // VALIDAR SI YA EXISTE
+                    val existe =
+                        UserRepository.existeUsuario(user.id)
+
+                    if (!existe) {
+
+                        val nombreCompleto =
+                            user.userMetadata
+                                ?.get("full_name")
+                                ?.toString()
+                                ?.replace("\"", "")
+                                ?: ""
+
+                        val partes =
+                            nombreCompleto.split(" ")
+
+                        val nombres =
+                            partes.firstOrNull() ?: ""
+
+                        val apellidos =
+                            partes.drop(1)
+                                .joinToString(" ")
+
+                        val correoGoogle =
+                            user.email ?: ""
+
+                        UserRepository.insertarUsuario(
+                            id = user.id,
+                            nombres = nombres,
+                            apellidos = apellidos,
+                            correo = correoGoogle,
+                            telefono = ""
+                        )
+                    }
                 }
 
                 Toast.makeText(

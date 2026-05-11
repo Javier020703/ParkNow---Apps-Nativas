@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
     <!-- PERMISOS -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-
-    <uses-permission android:name="android.permission.CAMERA"/>
-
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
-
-    <!-- Cámara opcional -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /> <!-- Cámara opcional -->
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="false"/>
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -27,70 +22,48 @@
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true">
-
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-        </activity>
-
-        <!-- ONBOARDING -->
+        </activity> <!-- ONBOARDING -->
         <activity
             android:name=".ui.onboarding.WelcomeActivity"
-            android:exported="false"/>
-
-        <!-- AUTH -->
+            android:exported="false" /> <!-- AUTH -->
         <activity
             android:name=".ui.auth.LoginActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
-            android:name=".ui.auth.RegistroActivity"
-            android:exported="false"/>
-
-        <!-- MAIN -->
+            android:name=".ui.auth.RegisterActivity"
+            android:exported="false" /> <!-- MAIN -->
         <activity
             android:name=".ui.MainActivity"
-            android:exported="false"/>
-
-        <!-- ADMIN -->
+            android:exported="false" /> <!-- ADMIN -->
         <activity
             android:name=".ui.admin_disabled.AdminActivity"
-            android:exported="false"/>
-
-        <!-- RESERVAS -->
+            android:exported="false" /> <!-- RESERVAS -->
         <activity
             android:name=".ui.admin_disabled.reservations.FormReservaActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".ui.admin_disabled.reservations.DetalleReservaActivity"
-            android:exported="false"/>
-
-        <!-- PARQUEADEROS -->
+            android:exported="false" /> <!-- PARQUEADEROS -->
         <activity
             android:name=".ui.admin_disabled.activities.FormParqueaderoActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".ui.admin_disabled.activities.VerParqueaderoActivity"
-            android:exported="false"/>
-
-        <!-- USUARIOS -->
+            android:exported="false" /> <!-- USUARIOS -->
         <activity
             android:name=".ui.admin_disabled.users.FormUsuarioActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".ui.admin_disabled.users.DetalleUsuarioActivity"
-            android:exported="false"/>
-
-        <!-- TARIFAS -->
+            android:exported="false" /> <!-- TARIFAS -->
         <activity
             android:name=".ui.admin_disabled.tarifas.FormTarifaActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
     </application>
 
 </manifest>
