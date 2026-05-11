@@ -1,30 +1,26 @@
-package com.example.parknow1.ui.user.reservation
+package com.example.parknow1.ui.reservation
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parknow1.R
+import com.example.parknow1.data.model.Reserva
 
 class ReservationAdapter(
-    private val reservations: List<ReservationModel>
+    private val lista: List<Reserva>
 ) : RecyclerView.Adapter<ReservationAdapter.ViewHolder>() {
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         val txtCodigo: TextView = view.findViewById(R.id.txtCodigo)
-        val txtParking: TextView = view.findViewById(R.id.txtParking)
         val txtEstado: TextView = view.findViewById(R.id.txtEstado)
+        val txtParking: TextView = view.findViewById(R.id.txtParking)
         val txtFecha: TextView = view.findViewById(R.id.txtFecha)
-        val viewStatus: View = view.findViewById(R.id.viewStatus)
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_reservation, parent, false)
@@ -32,38 +28,26 @@ class ReservationAdapter(
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
+    override fun getItemCount() = lista.size
 
-        return reservations.size
-    }
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-    override fun onBindViewHolder(
-        holder: ViewHolder,
-        position: Int
-    ) {
+        val item = lista[position]
 
-        val reservation = reservations[position]
+        holder.txtCodigo.text = item.id?.take(8) ?: "SIN-CODIGO"
 
-        holder.txtCodigo.text = reservation.codigo
-        holder.txtParking.text = reservation.parqueadero
-        holder.txtEstado.text = reservation.estado
-        holder.txtFecha.text = reservation.fecha
+        holder.txtEstado.text = item.estado.replaceFirstChar { it.uppercase() }
 
-        if (reservation.estado == "Activa") {
+        holder.txtParking.text =
+            item.nombreParqueadero ?: item.parqueadero
 
+        holder.txtFecha.text = item.hora
+
+        // color estado simple
+        if (item.estado == "activa") {
             holder.txtEstado.setTextColor(
-                Color.parseColor("#2E7D32")
+                holder.itemView.context.getColor(R.color.azul_oscuro)
             )
-
-            holder.viewStatus.visibility = View.VISIBLE
-
-        } else {
-
-            holder.txtEstado.setTextColor(
-                Color.parseColor("#777777")
-            )
-
-            holder.viewStatus.visibility = View.GONE
         }
     }
 }

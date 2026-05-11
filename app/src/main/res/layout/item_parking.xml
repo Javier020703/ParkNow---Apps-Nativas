@@ -1,34 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="14dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="4dp"
+    app:strokeColor="#EAEAEA"
+    app:strokeWidth="1dp">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:padding="16dp"
-        android:background="@drawable/card_bg"
-        android:layout_marginBottom="12dp"
-        android:orientation="vertical"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
 
+        <!-- NOMBRE -->
         <TextView
             android:id="@+id/tvName"
-            android:textStyle="bold"
-            android:textSize="16sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Parking Andino"
+            android:textColor="@color/azul_oscuro"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
+        <!-- DIRECCIÓN -->
         <TextView
             android:id="@+id/tvLocation"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Cra. 11 #82-71, Bogotá"
+            android:textColor="#666666"
+            android:textSize="14sp"/>
 
+        <!-- TARIFA -->
         <TextView
             android:id="@+id/tvPrice"
-            android:textColor="#0077B6"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="$9.000 / hora"
+            android:textColor="@color/azul_medio"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <!-- CUPOS -->
+        <TextView
+            android:id="@+id/tvSpots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="🟢 40 cupos disponibles"
+            android:textColor="#2E7D32"
+            android:textSize="14sp"/>
+
+        <!-- BOTÓN -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Ver detalles"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            app:cornerRadius="14dp"
+            android:backgroundTint="@color/azul_medio"/>
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

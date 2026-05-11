@@ -12,7 +12,7 @@
         android:title="Mapa"/>
 
     <item
-        android:id="@+id/nav_reservation"
+        android:id="@+id/nav_reservas"
         android:icon="@android:drawable/ic_menu_my_calendar"
         android:title="Reservas"/>
 

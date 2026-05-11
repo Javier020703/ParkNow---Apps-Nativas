@@ -81,6 +81,9 @@
             app:itemTextColor="@color/azul_oscuro"
             app:itemActiveIndicatorStyle="@null"
             app:labelVisibilityMode="labeled"
+            app:itemIconSize="24dp"
+            app:itemPaddingTop="6dp"
+            app:itemPaddingBottom="6dp"
             app:menu="@menu/menu_bottom"/>
 
     </LinearLayout>

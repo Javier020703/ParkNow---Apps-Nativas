@@ -1,60 +1,252 @@
 package com.example.parknow1.ui.user.map
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.Toast
+
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+
 import com.example.parknow1.R
+import com.example.parknow1.data.repository.ParqueaderoRepository
+import com.example.parknow1.data.model.Parqueadero
+import com.example.parknow1.ui.home.ParkingAdapter
+import com.example.parknow1.ui.detail.ParkingDetailFragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.Priority
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MapFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class MapFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
+
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+
+class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback {
+
+    private lateinit var rvParqueaderos: RecyclerView
+    private var googleMap: GoogleMap? = null
+
+    private var latUsuario: Double? = null
+    private var lonUsuario: Double? = null
+
+    private var parqueaderos = listOf<Parqueadero>()
+
+    // ---------------- PERMISO ----------------
+    private val permisoUbicacion =
+        registerForActivityResult(
+            ActivityResultContracts.RequestPermission()
+        ) { ok ->
+            if (ok) obtenerUbicacion()
+            else Toast.makeText(
+                requireContext(),
+                "Permiso de ubicación requerido",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        rvParqueaderos = view.findViewById(R.id.rvParqueaderos)
+        rvParqueaderos.layoutManager =
+            LinearLayoutManager(requireContext())
+
+        // MAPA
+        val mapFragment = SupportMapFragment.newInstance()
+        childFragmentManager.beginTransaction()
+            .replace(R.id.map_container, mapFragment)
+            .commit()
+
+        mapFragment.getMapAsync(this)
+
+        cargarParqueaderos()
+
+        if (tienePermiso()) {
+            obtenerUbicacion()
+        } else {
+            permisoUbicacion.launch(
+                Manifest.permission.ACCESS_FINE_LOCATION
+            )
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_map, container, false)
+    // ---------------- MAP READY ----------------
+    override fun onMapReady(map: GoogleMap) {
+
+        googleMap = map
+        map.uiSettings.isZoomControlsEnabled = true
+
+        map.moveCamera(
+            CameraUpdateFactory.newLatLngZoom(
+                LatLng(4.6097, -74.0817),
+                12f
+            )
+        )
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MapFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MapFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    // ---------------- DATA ----------------
+    private fun cargarParqueaderos() {
+
+        lifecycleScope.launch {
+
+            try {
+
+                parqueaderos =
+                    ParqueaderoRepository.obtenerParqueaderos()
+
+                rvParqueaderos.adapter =
+                    ParkingAdapter(parqueaderos) { p ->
+
+                        val bundle = Bundle().apply {
+                            putString("parqueadero_id", p.id)
+                            putString("nombre", p.nombre)
+                            putString("direccion", p.direccion)
+                            putDouble("tarifa", p.tarifa_hora)
+                            putInt("cupos", p.cupos_disponibles)
+                        }
+
+                        parentFragmentManager.beginTransaction()
+                            .replace(
+                                R.id.contenedor,
+                                ParkingDetailFragment().apply {
+                                    arguments = bundle
+                                }
+                            )
+                            .addToBackStack(null)
+                            .commit()
+                    }
+
+                mostrarEnMapa()
+
+            } catch (e: Exception) {
+
+                Toast.makeText(
+                    requireContext(),
+                    "Error cargando parqueaderos",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
+        }
+    }
+
+    // ---------------- PERMISO CHECK ----------------
+    private fun tienePermiso(): Boolean {
+
+        return ContextCompat.checkSelfPermission(
+            requireContext(),
+            Manifest.permission.ACCESS_FINE_LOCATION
+        ) == PackageManager.PERMISSION_GRANTED
+    }
+
+    // ---------------- UBICACIÓN ----------------
+    private fun obtenerUbicacion() {
+
+        if (!tienePermiso()) return
+
+        lifecycleScope.launch {
+
+            try {
+
+                val client =
+                    LocationServices
+                        .getFusedLocationProviderClient(requireActivity())
+
+                val location =
+                    client.getCurrentLocation(
+                        Priority.PRIORITY_HIGH_ACCURACY,
+                        null
+                    ).await()
+
+                location?.let {
+
+                    latUsuario = it.latitude
+                    lonUsuario = it.longitude
+
+                    mostrarEnMapa()
+                }
+
+            } catch (e: SecurityException) {
+
+                Toast.makeText(
+                    requireContext(),
+                    "Sin permisos de ubicación",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+            } catch (e: Exception) {
+
+                Toast.makeText(
+                    requireContext(),
+                    "Error obteniendo ubicación",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
+    // ---------------- MAP ----------------
+    private fun mostrarEnMapa() {
+
+        val map = googleMap ?: return
+
+        map.clear()
+
+        // usuario
+        val usuario = latUsuario?.let { lat ->
+            lonUsuario?.let { lon ->
+                LatLng(lat, lon)
+            }
+        }
+
+        usuario?.let {
+
+            map.addMarker(
+                MarkerOptions()
+                    .position(it)
+                    .title("Tu ubicación")
+                    .icon(
+                        BitmapDescriptorFactory.defaultMarker(
+                            BitmapDescriptorFactory.HUE_AZURE
+                        )
+                    )
+            )
+
+            map.moveCamera(
+                CameraUpdateFactory.newLatLngZoom(it, 13f)
+            )
+        }
+
+        // parqueaderos
+        parqueaderos.forEach { p ->
+
+            val lat = p.latitud ?: return@forEach
+            val lon = p.longitud ?: return@forEach
+            val pos = LatLng(lat, lon)
+
+            map.addMarker(
+                MarkerOptions()
+                    .position(pos)
+                    .title(p.nombre)
+                    .snippet(p.direccion)
+                    .icon(
+                        BitmapDescriptorFactory.defaultMarker(
+                            BitmapDescriptorFactory.HUE_RED
+                        )
+                    )
+            )
+        }
     }
 }

@@ -18,6 +18,8 @@ import com.google.android.material.navigation.NavigationView
 
 import com.example.parknow1.ui.home.HomeFragment
 import com.example.parknow1.ui.profile.ProfileFragment
+import com.example.parknow1.ui.reservation.ReservationsFragment
+import com.example.parknow1.ui.user.map.MapFragment
 
 import io.github.jan.supabase.auth.auth
 import kotlinx.coroutines.launch
@@ -60,6 +62,14 @@ class MainActivity : AppCompatActivity() {
                     cambiarFragment(HomeFragment())
                 }
 
+                R.id.nav_map -> {
+                    cambiarFragment(MapFragment())
+                }
+
+                R.id.nav_reservas -> {
+                    cambiarFragment(ReservationsFragment())
+                }
+
                 R.id.nav_profile -> {
                     cambiarFragment(ProfileFragment())
                 }
@@ -72,6 +82,22 @@ class MainActivity : AppCompatActivity() {
         navigationView.setNavigationItemSelectedListener {
 
             when (it.itemId) {
+
+                R.id.nav_home -> {
+                    cambiarFragment(HomeFragment())
+                }
+
+                R.id.nav_reservas -> {
+                    cambiarFragment(ReservationsFragment())
+                }
+
+                R.id.nav_map -> {
+                    cambiarFragment(MapFragment())
+                }
+
+                R.id.nav_profile -> {
+                    cambiarFragment(ProfileFragment())
+                }
 
                 R.id.nav_logout -> {
                     cerrarSesion()
